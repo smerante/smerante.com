@@ -26,6 +26,15 @@ p.intro
 	top: 10px;
 	font-family: Verdana, Geneva, sans-serif;
 }
+#time
+{
+	position:relative;
+	text-align: Center;
+	color: rgb(201, 225, 229);
+	top: 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+}
 hr
 {
 	border-color: rgb(201, 225, 229);

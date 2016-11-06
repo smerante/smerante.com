@@ -1,0 +1,54 @@
+h1#Title
+{
+	text-align: center;
+	color: rgb(201, 225, 229);
+	font-family: Verdana, Geneva, sans-serif;
+}
+h1, h2, h3{
+color: rgb(201, 225, 229);	
+}
+
+body
+{
+	 background-color: rgb(22, 22, 61);
+	 background-image:url("http://www.designbolts.com/wp-content/uploads/2012/11/Free-medium-dark-Tileable-Pattern-Website-Background.jpg");
+	 background-repeat:repeat;
+}
+
+hr
+{
+	border-color: rgb(201, 225, 229);
+	height: 10px;
+	color:rgb(201, 225, 229);
+	border-style: outset;
+}             
+p
+{
+	color: rgb(201, 225, 229);
+}
+table
+{
+	width: 100%;
+	color: rgb(201, 225, 229);
+}
+th
+{
+	color: rgb(201, 225, 229);
+	font-family: Verdana, Geneva, sans-serif;
+}
+li
+{
+color: rgb(201, 225, 229);	
+}
+a:link
+{
+	color:rgb(66, 244, 72);
+}
+a:visited
+{
+	color:rgb(240, 130, 255);
+}
+a:hover
+{
+	color:rgb(124, 160, 249);
+}

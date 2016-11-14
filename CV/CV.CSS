@@ -1,54 +1,103 @@
 h1#Title
 {
 	text-align: center;
-	color: rgb(201, 225, 229);
+	rgb(0, 0, 0);
 	font-family: Verdana, Geneva, sans-serif;
 }
-h1, h2, h3{
-color: rgb(201, 225, 229);	
+h1{
+	rgb(0, 0, 0);	
+	text-align: center;
+}
+h2, h3{
+	rgb(0, 0, 0);
+	text-align: left;
+	text-decoration:underline;
+}
+p
+{
+	color:rgb(0, 0, 0);
 }
 
+#p1
+{
+	position: relative;
+	top: -15px;
+	text-align:center;
+}
+#ContactInfo
+{
+	position: relative;
+	top: -15px;
+	text-align: center
+}
+.Education
+{
+	position: relative;
+	top: -10px;
+	
+}
+.Experience > p
+{
+	line-height:75%;
+}
+.moveUp
+{
+	position: relative;
+	top: -30px;
+}
 body
 {
-	 background-color: rgb(22, 22, 61);
-	 background-image:url("http://www.designbolts.com/wp-content/uploads/2012/11/Free-medium-dark-Tileable-Pattern-Website-Background.jpg");
-	 background-repeat:repeat;
+	 background-color: rgb(255,255,255);
 }
 
 hr
 {
-	border-color: rgb(201, 225, 229);
+	border-color: rgb(0, 0, 0);
 	height: 10px;
-	color:rgb(201, 225, 229);
+	color:rgb(0, 0, 0);
 	border-style: outset;
-}             
+} 
+ul
+{
+	position: relative;
+	top: -15px;
+}
 p
 {
-	color: rgb(201, 225, 229);
+	color: rgb(0, 0, 0);
+}
+#LargeText
+{
+	font-size: 125%;	
+	color: rgb(0, 0, 0);
 }
 table
 {
+	position: relative;
 	width: 100%;
-	color: rgb(201, 225, 229);
+	color: rgb(0, 0, 0);
+	top:-15px;
 }
 th
 {
-	color: rgb(201, 225, 229);
+	color: rgb(0, 0, 0);
 	font-family: Verdana, Geneva, sans-serif;
 }
 li
 {
-color: rgb(201, 225, 229);	
+color: rgb(0, 0, 0);	
+text-align: left;
+width: 50%
 }
 a:link
 {
-	color:rgb(66, 244, 72);
+	rgb(0, 0, 0);
 }
 a:visited
 {
-	color:rgb(240, 130, 255);
+	rgb(0, 0, 0);
 }
 a:hover
 {
-	color:rgb(124, 160, 249);
+	rgb(0, 0, 0);
 }

@@ -10,7 +10,7 @@
 	<h2 class = "prod"> Under Production</h2>
 	<hr/>
 	<table>
-		<th> <a href="CV/index.html">CV</a> </th> <th> <a href="index.html">Projects</a> </th>
+		<th> <a href="CV/index.html">CV</a> </th> <th> Link2 </th> <th> Link3 </th> <th> Link4 </th>
 	</table>
 	<p class = "intro"> I am an undergrad student currently in my fourth year of Computer Science
 		  at York University, Toronto. 

@@ -8,8 +8,9 @@
 	<h1 id = "Title"> Sam Merante's Cumulative Vitae</h1>
 	<hr/>
 	<table id = "NavBar">
-		<th> <a href="../index.html">Home</a> </th> <th> <a href="../index.html">Projects</a> </th> 
+		<th> <a href="../index.html">Home</a> </th> <th> Link2 </th> <th> Link3 </th> <th> Link4 </th>
 	</table>
+	<p id = "ContactInfo"> Merante.s@hotmail.com | (647) 618 - 8164</p>
 	<table>
 		<tr>
 			<td width = "50%">
@@ -21,7 +22,6 @@
 			<a href = https://ca.linkedin.com/in/sam&#45;merante&#45;23b181129>
 				<img id = "Profile" src = "Profile.PNG"/>
 			</a>
-				<p id = "ContactInfo"> Merante.s@hotmail.com | (647) 618 - 8164</p>
 			</td>
 		</tr>
 	</table>

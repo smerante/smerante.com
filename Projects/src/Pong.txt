@@ -1,0 +1,133 @@
+package poong;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+public class Poong
+  extends JPanel
+  implements ActionListener, KeyListener
+{
+  Timer T = new Timer(5, this);
+  int p1y = 300;
+  int p2y = 300;
+  int vel1y = 0;
+  int vel2y = 0;
+  int score1 = 0;
+  int score2 = 0;
+  int circlex = 500;
+  int circley = 300;
+  int cvx = 3;
+  int cvy = 3;
+  
+  public Poong()
+  {
+    this.T.start();
+    addKeyListener(this);
+    setFocusable(true);
+    setFocusTraversalKeysEnabled(true);
+  }
+  
+  public void paintComponent(Graphics g)
+  {
+    super.paintComponent(g);
+    Graphics2D draw = (Graphics2D)g;
+    draw.fillRect(10, this.p1y, 15, 150);
+    draw.fillRect(970, this.p2y, 15, 150);
+    draw.setColor(Color.RED);
+    draw.fillOval(this.circlex, this.circley, 15, 15);
+    draw.drawString("P1: " + this.score1, 100, 20);
+    draw.drawString("P2: " + this.score2, 800, 20);
+  }
+  
+  public void actionPerformed(ActionEvent e)
+  {
+    move();
+    repaint();
+  }
+  
+  public void move()
+  {
+    this.p1y += this.vel1y;
+    this.p2y += this.vel2y;
+    this.circlex += this.cvx;
+    this.circley += this.cvy;
+    if (this.circlex <= 0)
+    {
+      this.circlex = 500;
+      this.score2 += 1;
+    }
+    if (this.circlex >= 1000)
+    {
+      this.circlex = 500;
+      this.score1 += 1;
+    }
+    if ((this.circlex <= 25) && (this.circlex >= -5) && (this.circley >= this.p1y) && (this.circley <= this.p1y + 150)) {
+      this.cvx = 3;
+    }
+    if ((this.circlex >= 955) && (this.circlex <= 970) && (this.circley >= this.p2y) && (this.circley <= this.p2y + 150)) {
+      this.cvx = -3;
+    }
+    if (this.circley <= 0) {
+      this.cvy = 3;
+    }
+    if (this.circley >= 670) {
+      this.cvy = -3;
+    }
+  }
+  
+  public void keyPressed(KeyEvent e)
+  {
+    int key = e.getKeyCode();
+    if (key == 87) {
+      this.vel1y = -4;
+    }
+    if (key == 83) {
+      this.vel1y = 4;
+    }
+    if (key == 38) {
+      this.vel2y = -4;
+    }
+    if (key == 40) {
+      this.vel2y = 4;
+    }
+  }
+  
+  public void keyReleased(KeyEvent e)
+  {
+    int key = e.getKeyCode();
+    if (key == 87) {
+      this.vel1y = 0;
+    }
+    if (key == 83) {
+      this.vel1y = 0;
+    }
+    if (key == 38) {
+      this.vel2y = 0;
+    }
+    if (key == 40) {
+      this.vel2y = 0;
+    }
+  }
+  
+  public void keyTyped(KeyEvent ke) {}
+  
+  public static void main(String[] args)
+  {
+    JFrame f = new JFrame("Pong");
+    Poong game = new Poong();
+    f.setResizable(false);
+    f.add(game);
+    f.setSize(1000, 700);
+    f.setLocation(200, 10);
+    f.setDefaultCloseOperation(3);
+    f.setVisible(true);
+  }
+}

@@ -6,3 +6,4 @@ function setDate()
 	var d = new Date();
 	time.innerHTML = d;
 }
+//TestChange

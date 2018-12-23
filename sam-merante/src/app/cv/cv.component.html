@@ -1,0 +1,187 @@
+<h1 class="text-center">Sam Merante's Cumulative Vitae</h1>
+
+<div class="card bg-light mb-3">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a [ngClass]="toggleCards[0] ? 'nav-link active' : 'nav-link'" (click)="toggleCard(0);">Developer Experience</a>
+      </li>
+      <li class="nav-item">
+        <a [ngClass]="toggleCards[1] ? 'nav-link active' : 'nav-link'" (click)="toggleCard(1);">Employment Experience</a>
+      </li>
+      <li class="nav-item">
+        <a [ngClass]="toggleCards[2] ? 'nav-link active' : 'nav-link'" (click)="toggleCard(2);">Education</a>
+      </li>
+    </ul>
+  </div>
+  <div [hidden]="!toggleCards[0]" class="card-body">
+    <p class="card-text small">
+      I have multiple years of programming experience in Java, C++, Python, C#, C, among other languages,
+      with experience in programming both front end and back end at the enterprise level for a major North American
+      bank. I have sufficient knowledge of the online banking services platforms.
+    </p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-title">Tech Stack</li>
+      <li class="list-group-item">Front end: JS, AngularJs, Angular </li>
+      <li class="list-group-item">Back end: Java EE, C#</li>
+      <li class="list-group-item">Databases: SQL, Oracle</li>
+      <li class="list-group-item">Machine Learning, AI, Natural Language Processing (NLP)</li>
+      <li class="list-group-item">BDD (Behavior Driven Development), TDD (Test Driven Development) in Java and Angular</li>
+      <li class="list-group-item">Source Control: GIT (Bitbucket, Github)</li>
+      <li class="list-group-item">Project Management: Confluence, JIRA</li>
+      <li class="list-group-item">Agile methodologies</li>
+      <li class="list-group-item">Dev Ops: Jenkins </li>
+      <li class="list-group-item">Source Control: GIT (Bitbucket, Github)</li>
+    </ul>
+  </div>
+  <div [hidden]="!toggleCards[1]" class="card-body">
+    <div class="row">
+      <div class="col-sm-6 list-bold">
+        Toronto-Dominion Bank (TD Canada Trust)
+      </div>
+      <div class="col-sm-6 text-right">
+        May 2017 - June 2018
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Worked on a large project involving many different teams on web applications, in Java
+        HTML, and Java script
+        using
+        the angular framework to provide the best user experience.</li>
+      <li class="list-group-item">Created and won second place in a hackathon challenge for TD where I programmed an
+        application from scratch
+        in
+        Java Spring Boot and Angular 6, to innovate the onboarding process.</li>
+      <li class="list-group-item">Developed project and time management skills by working with the agile framework in a
+        fast paced
+        environment
+        meeting critical timeframes given.</li>
+      <li class="list-group-item">Led a group of software developers when given the task of delivering defects and
+        error fixes in a timely
+        manner
+        while ensuring that deadlines were met while producing quality code.</li>
+      <li class="list-group-item">Experienced in delivering quality assurance; wrote Gherkin feature files and
+        behaviour driven development
+        (BDD)
+        test cases using the selenium framework in Java.</li>
+      <li class="list-group-item">Took initiative by training and mentoring new developers; running weekly check in
+        meetings to discuss
+        achievements, events, and news within the technology community.</li>
+      <li class="list-group-item">Managed deployments of the applications to servers using Jenkins to ensure builds are
+        meeting test,
+        security, and
+        automation script completion in preparation for production.</li>
+    </ul>
+    <div class="row" style="margin-top: 32px;">
+      <div class="col-sm-6 list-bold">
+        Real Programming for Kids
+      </div>
+      <div class="col-sm-6 text-right">
+        April 2015 – June 2017
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Managed a class of 4 students from grades 1 – 12 to develop computer science skills
+        which led them be critical
+        problem solvers and analytical thinkers.</li>
+      <li class="list-group-item">Demonstrated leadership skills, and teamwork skills, when faced with problems such as
+        fixing bugs. I supported my
+        team members by communicating my ideas with them to find errors, fix them, and inform management to prevent for
+        future errors.</li>
+      <li class="list-group-item">Developed project and time management skills by working with the agile framework in a
+        fast paced
+        environment
+        meeting critical timeframes given.</li>
+      <li class="list-group-item">Innovated the way classes are taught by allowing students to create their own games
+        from scratch rather than
+        following a set plan, which allowed for more development of programming skills in addition to facilitating
+        creativity.</li>
+      <li class="list-group-item">Showed initiative by creating a program for my team that automates the process of
+        creating report cards, which
+        significantly reduced the time required to complete them</li>
+    </ul>
+  </div>
+  <div [hidden]="!toggleCards[2]" class="card-body">
+    <div class="row">
+      <div class="list-title">
+        E-Health Project, Software Design Course
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-bold">
+        Final Grade: B
+      </li>
+      <li class="list-group-item">
+        Designed an E-Health System to keep track of Doctors, Patients, Medicine, and Prescriptions with a Design by
+        Contract approach using Eiffel. Implemented the system using maps and set data structures along with sorting
+        algorithms. As a result the system prevented dangerous prescription/interactions and ensured safe practices in
+        hospitals.
+      </li>
+    </ul>
+    <div style="margin-top:32px" class="row">
+      <div class="list-title">
+        Data Structure Designs
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-bold">
+        Final Grade: A
+      </li>
+      <li class="list-group-item">
+        Implemented a variety of data structure techniques to solve real world problems such as a Priority Queue to
+        organize patients waiting in an emergency triage.
+      </li>
+    </ul>
+
+    <div style="margin-top:32px" class="row">
+      <div class="list-title">
+        Asymptotic Analysis
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-bold">
+        Final Grade: B+
+      </li>
+      <li class="list-group-item">
+        Analyzed problems based on time/space complexity and determined which data structures will be best suited to
+        solve the problem most efficiently. Problems involved the use of programming techniques such as dynamic
+        programming, greedy algorithms, and memoization.
+      </li>
+    </ul>
+
+    <div style="margin-top:32px" class="row">
+      <div class="list-title">
+        Software Courses
+      </div>
+    </div>
+    <ul class="list-group list-group">
+      <li class="list-group-item">
+        Software Tools
+      </li>
+      <li class="list-group-item">
+        Fundamental Data Structures
+      </li>
+      <li class="list-group-item">
+        Computer Organization
+      </li>
+      <li class="list-group-item">
+        Design & Analysis of Algorithms
+      </li>
+      <li class="list-group-item">
+        Operating System Design
+      </li>
+      <li class="list-group-item">
+        Software Design
+      </li>
+      <li class="list-group-item">
+        AI and Logic Programming
+      </li>
+      <li class="list-group-item">
+        Mathematical Logic
+      </li>
+      <li class="list-group-item">
+        Net-Centric computing
+      </li>
+    </ul>
+  </div>
+</div>

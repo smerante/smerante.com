@@ -1,0 +1,24 @@
+.card{
+  width: 90%;
+  margin: 16px auto;
+}
+.list-group-item{
+  background-color: transparent;
+}
+.small{
+  font-size: 0.75rem;
+}
+.list-title{
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.list-bold{
+  font-weight: 700;
+}
+.nav-link{
+  font-size: 1.25rem;
+  &:hover{
+    cursor: pointer;
+  }
+}

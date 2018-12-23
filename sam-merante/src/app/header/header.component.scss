@@ -1,16 +1,18 @@
 .expanding{
-  height: 160px;
+  height: 80px;
 }
 .closing{
   height: 0px;
 }
 .navbar-toggler{
+  border: none;
     & .nav-menu-chevron{
       display: block;
       width: 30px;
       height: 3px;
       background-color: black;
       margin: 15px 0;
+      transition: all  0.3s ease;
       &::before{
         transition: all  0.3s ease;
         display: block;

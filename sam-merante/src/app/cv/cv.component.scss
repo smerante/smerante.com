@@ -33,3 +33,9 @@
     margin-left: 0px;
   }
 }
+.nav-item{
+  @media screen and ( max-width: 768px){
+    display: block;
+    width: 100%;
+  }
+}

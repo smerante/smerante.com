@@ -1,5 +1,5 @@
 .expanding{
-  height: 80px;
+  height: 120px;
 }
 .closing{
   height: 0px;
@@ -13,6 +13,9 @@
       background-color: black;
       margin: 15px 0;
       transition: all  0.3s ease;
+      -webkit-transition: all  0.3s ease;
+      -moz-transition: all  0.3s ease;
+      -o-transition: all  0.3s ease;
       &::before{
         transition: all  0.3s ease;
         display: block;
@@ -26,6 +29,9 @@
       }
       &::after{
         transition: all  0.3s ease;
+        -webkit-transition: all  0.3s ease;
+        -moz-transition: all  0.3s ease;
+        -o-transition: all  0.3s ease;
         display: block;
         position: relative;
         top: 6px;

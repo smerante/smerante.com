@@ -15,6 +15,10 @@
       <li class="nav-item">
         <a [ngClass]="toggleCards[3] ? 'nav-link active' : 'nav-link'" (click)="toggleCard(3);">Interests</a>
       </li>
+      <li class="nav-item">
+        <a [ngClass]="toggleCards[4] ? 'nav-link active' : 'nav-link'" (click)="toggleCard(4);">Honours &amp;
+          Achievements</a>
+      </li>
     </ul>
   </div>
   <div [hidden]="!toggleCards[0]" class="card-body">
@@ -57,7 +61,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Worked at RBC creating an angular library for common components to be used throughout
         the OMNI/OLB.
-        The library includes styles, components, and frameworks for creating angular applications</li>
+        The library includes styles, components, and frameworks for creating angular applications.</li>
     </ul>
     <div class="row" style="margin-top: 32px;">
       <div class="col-sm-6 list-bold">
@@ -250,33 +254,74 @@
       <li class="list-group-item">Playing and creating video games</li>
       <li class="list-group-item">Keeping active and healthy</li>
     </ul>
-
     <div style="margin-top: 32px" class="row">
       <div class="col-sm-6 list-bold">
-        Portal Jumper
-      </div>
-      <div class="col-sm-6 text-right">
-        April 2015 – August 2015
+        Application Development - Android
       </div>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        Lead programmer for a free mobile game application 
-        <a class="card-link" target="_blank" href="https://play.google.com/store/apps/details?id=runner.android&hl=en">Portal Jumper</a> for the Android platform with a team of 4 students. The app
-        is currently on the Google Play Store and available for download.
+        I enjoy developing mobile games and apps for the android platform, check out my
+        <a class="card-link" target="_blank" href="https://play.google.com/store/apps/developer?id=0110+Studios&hl=en">Google
+          Play developer account.</a>
+      </li>
+    </ul>
+    <div style="margin-top: 32px" class="row">
+      <div class="col-sm-6 list-bold">
+        Volunteer Experience
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+          Helped mentor youth at risk by teaching social and school skills.
+      </li>
+    </ul>
+  </div>
+  <div [hidden]="!toggleCards[4]" class="card-body">
+    <div class="row">
+      <div class="col-sm-6 list-bold">
+        Ontario Scholar
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Awarded to students who have obtained an average of 80% or above in any six Grade 12 University Courses.
       </li>
     </ul>
 
-    <div style="margin-top: 32px" class="row">
-        <div class="col-sm-6 list-bold">
-          Application Development - Android
-        </div>
+    <div style="margin-top:16px" class="row">
+      <div class="col-sm-6 list-bold">
+        York University Entrance Scholarship
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            I enjoy developing mobile games and apps for the android platform, check out my
-          <a class="card-link" target="_blank" href="https://play.google.com/store/apps/developer?id=0110+Studios&hl=en">Google Play developer account.</a> 
-        </li>
-      </ul>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Awarded to students with an average of 90% or above upon graduating from Grade 12.
+      </li>
+    </ul>
+
+    <div style="margin-top:16px" class="row">
+      <div class="col-sm-6 list-bold">
+        Spring Boot Expert
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Award upon completion of spring boot <a class="card-link" target="_blank" href="https://www.udemy.com/certificate/UC-03Z43GPF/">Udemy
+          course</a>.
+      </li>
+    </ul>
+
+    <div style="margin-top:16px" class="row">
+      <div class="col-sm-6 list-bold">
+        React
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Award upon completion of React Basic <a class="card-link" target="_blank" href="https://www.udemy.com/certificate/UC-CROAYZBT/">Udemy
+          course</a>.
+      </li>
+    </ul>
   </div>
 </div>

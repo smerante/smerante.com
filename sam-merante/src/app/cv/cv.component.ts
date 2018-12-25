@@ -10,7 +10,7 @@ export class CVComponent implements OnInit {
   toggleCards: boolean[];
 
   constructor() {
-    this.toggleCards = [true, false, false, false];
+    this.toggleCards = [true, false, false, false, false];
   }
 
   ngOnInit() {

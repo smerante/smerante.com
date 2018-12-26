@@ -26,6 +26,8 @@ export class CodeComponent implements OnInit {
   @ViewChild('card17') card17: ElementRef;
   @ViewChild('card18') card18: ElementRef;
   @ViewChild('card19') card19: ElementRef;
+  @ViewChild('card20') card20: ElementRef;
+  @ViewChild('card21') card21: ElementRef;
 
   constructor(private renderer: Renderer2) { }
 
@@ -187,6 +189,22 @@ export class CodeComponent implements OnInit {
       setTimeout(
         () => {
           this.renderer.addClass(this.card19.nativeElement, 'card__show--come-in');
+        }, 100
+      )
+    }
+    if ((this.card20.nativeElement.getBoundingClientRect().top + this.card20.nativeElement.getBoundingClientRect().height/2)  <= window.innerHeight) {
+      this.renderer.addClass(this.card20.nativeElement, 'card__show');
+      setTimeout(
+        () => {
+          this.renderer.addClass(this.card20.nativeElement, 'card__show--come-in');
+        }, 100
+      )
+    }
+    if ((this.card21.nativeElement.getBoundingClientRect().top + this.card21.nativeElement.getBoundingClientRect().height/2)  <= window.innerHeight) {
+      this.renderer.addClass(this.card21.nativeElement, 'card__show');
+      setTimeout(
+        () => {
+          this.renderer.addClass(this.card21.nativeElement, 'card__show--come-in');
         }, 100
       )
     }

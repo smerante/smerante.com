@@ -15,7 +15,7 @@
               - Please enter a password
           </span>
           <span [attr.invalid]="errorMessage !== ''" class="invalid-message">
-              {{errorMessage}}
+              {{errorMessage}} <span *ngIf="errorMessage === 'User not verified yet'"><a tabindex="0" style="cursor: pointer" (click)="resendVerication();" >Send verification email again</a></span>
           </span>
         </div>
         <form [formGroup]="loginForm">

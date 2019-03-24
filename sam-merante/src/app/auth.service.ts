@@ -28,7 +28,7 @@ export class AuthService {
   verifyEmail() {
     return firebase.auth().currentUser.sendEmailVerification().then(
       (verified) => {
-        console.log('Sending verifcation email :', verified);
+        console.log('Sending verifcation email :', firebase.auth().currentUser.email);
         return verified;
       });
   }

@@ -50,7 +50,7 @@
                 <button class="btn-submit" [disabled]="submitted && loginForm.invalid" (click)="submit();">Login</button>
             </div>
             <div class="col-sm-6">
-                <button class="btn-submit" [disabled]="submitted && loginForm.invalid" (click)="router.navigate(['/register']);">Register</button>
+                <button class="btn-submit" [disabled]="submitted && loginForm.invalid" (click)="goTo('register');">Register</button>
             </div>
           </div>
         </form>

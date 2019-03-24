@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
       console.log('siging in user: ', email);
       this.auth.signInUser(email, password)
         .then(() => {
-          if(this.auth.isSignedIn){
+          if (this.auth.isSignedIn) {
             this.router.navigate(['/components']);
-          }else{
+          } else {
             this.errorMessage = 'User not verified yet'
           }
         }
@@ -54,5 +54,8 @@ export class LoginComponent implements OnInit {
           }
         );
     }
+  }
+  goTo(page: string) {
+    this.router.navigate(['/' + page]);
   }
 }

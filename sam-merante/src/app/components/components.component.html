@@ -1,0 +1,19 @@
+<h1 class="display-4 text-center">Components</h1>
+<div [hidden]="loggedIn" class="container">
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <button class="btn-sam" (click)="goTo('login');">Login</button>
+    </div>
+    <div class="col-sm-6 text-center">
+      <button class="btn-sam" (click)="goTo('register');">Register</button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div *ngIf="loggedIn" class="container">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <button class="btn-sam" (click)="auth.logout();goTo('home');">Logout</button>
+    </div>
+  </div>
+</div>

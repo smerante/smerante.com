@@ -9,6 +9,11 @@ import { HeaderComponent } from './header/header.component';
 import { CVComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CodeComponent } from './code/code.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { ComponentsComponent } from './components/components.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +23,17 @@ import { CodeComponent } from './code/code.component';
     HeaderComponent,
     CVComponent,
     ProjectsComponent,
-    CodeComponent
+    CodeComponent,
+    RegisterComponent,
+    ComponentsComponent,
+    LoginComponent,
+    AuthenticatedComponents
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

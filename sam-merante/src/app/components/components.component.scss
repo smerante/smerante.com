@@ -1,0 +1,70 @@
+@mixin base-font{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+}
+@mixin pseudo-border{
+  &:before{    
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    bottom: 0px;
+    left: 50%;
+    border-bottom: 2px solid #027fe6;
+    border-top: 2px solid #027fe6;
+    border-radius: 0;
+    transition: all ease-in-out 0.5s;
+  }
+  &:after{    
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 0px;
+    border-left: 2px solid #027fe6;
+    border-right: 2px solid #027fe6;
+    border-radius: 0;
+    transition: all ease-in-out 0.5s;
+  }
+}
+.col-sm-6{
+  padding: 8px;
+}
+.btn-sam{
+  height: 42px;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  background: white;
+  position: relative;
+  border: 1px solid #027fe65d;
+  border-radius: .25rem;
+  @include base-font;
+  cursor: pointer;
+  @include pseudo-border;
+  &:focus{
+    outline: none;
+    &:before{
+      left:0;
+      width:100%;
+      border-radius: .25rem;
+    }
+    &:after{
+      top: 0px;
+      height:100%;
+      border-radius: .25rem;
+    }
+  }
+  &:active{
+    background: #027fe6;
+    color: white;
+  }
+  &:disabled{
+    background: #f1f1f1;
+    cursor: not-allowed;
+    border: black;
+  }
+}

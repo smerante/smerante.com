@@ -4,8 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { CVComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CodeComponent } from './code/code.component';
+import { ComponentsComponent } from './components/components.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'components', component: ComponentsComponent, children:[
+    { path: 'authenticated', component: AuthenticatedComponents, canActivate: [AuthGuardService]}
+  ]},
   { path: 'code', component: CodeComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'home', component: HomeComponent},

@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
+import { DocumentationModule } from './components/documentation/documentation.module';
+import { CtaComponent } from './components/cta/cta.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { AuthenticatedComponents } from './components/authenticated/authenticate
     RegisterComponent,
     ComponentsComponent,
     LoginComponent,
-    AuthenticatedComponents
+    AuthenticatedComponents,
+    CtaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DocumentationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,91 @@
+@mixin base-font{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+}
+@mixin pseudo-border{
+  &:before{    
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    bottom: 0px;
+    left: 50%;
+    border-bottom: 2px solid #027fe6;
+    border-top: 2px solid #027fe6;
+    border-radius: 0;
+    transition: all ease-in-out 0.5s;
+  }
+  &:after{    
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 0px;
+    border-left: 2px solid #027fe6;
+    border-right: 2px solid #027fe6;
+    border-radius: 0;
+    transition: all ease-in-out 0.5s;
+  }
+}
+.sam-btn {
+  @include base-font;
+  @include pseudo-border;
+  position: relative;
+  min-height: 42px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #027fe65d;
+  border-radius: .25rem;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+    box-shadow: 4px 4px 15px 0px #00000079;
+    &:before{
+      left:0;
+      width:100%;
+      border-radius: .25rem;
+    }
+    &:after{
+      top: 0px;
+      height:100%;
+      border-radius: .25rem;
+    }
+  }
+  &:active{
+    background: #027fe6;
+    color: white;
+  }
+  &:disabled{
+    background: #f1f1f1;
+    cursor: not-allowed;
+    border: black;
+  }
+  &--secondary{
+    background: #027fe6;
+    border: 0px;
+    color: #ffffff;
+    &:before{
+      border-top: 2px solid #ffffff;
+      border-bottom: 2px solid #ffffff;
+    }
+    &:after{
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #ffffff;
+    }
+  }
+  &--tertiary{
+    border: 0px;
+    line-height: 1;
+    padding: 4px 4px;
+    min-height: 0;
+    margin: 8px 12px;
+  }
+  &--small{    
+    min-height: 21px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+}

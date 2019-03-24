@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
 
   resendVerication(){
     this.auth.verifyEmail();
+    this.errorMessage = 'Please check email for verification link';
   }
 
   goTo(page: string) {

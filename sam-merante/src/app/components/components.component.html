@@ -1,19 +1,24 @@
 <h1 class="display-4 text-center">Components</h1>
 <div [hidden]="loggedIn" class="container">
   <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="alert-danger" >Please login/create an account to view components</p>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm-6 text-center">
-      <button class="btn-sam" (click)="goTo('login');">Login</button>
+      <button sam-cta (click)="goTo('login');">Login</button>
     </div>
     <div class="col-sm-6 text-center">
-      <button class="btn-sam" (click)="goTo('register');">Register</button>
+      <button sam-cta (click)="goTo('register');">Register</button>
     </div>
   </div>
 </div>
 <router-outlet></router-outlet>
 <div *ngIf="loggedIn" class="container">
   <div class="row">
-    <div class="col-sm-4 text-center">
-      <button class="btn-sam" (click)="auth.logout();goTo('home');">Logout</button>
+    <div class="col-sm-12 text-center">
+      <button sam-cta (click)="auth.logout();goTo('home');">Logout</button>
     </div>
   </div>
 </div>

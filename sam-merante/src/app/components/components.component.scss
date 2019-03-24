@@ -33,38 +33,3 @@
 .col-sm-6{
   padding: 8px;
 }
-.btn-sam{
-  height: 42px;
-  padding: 8px 16px;
-  outline: none;
-  border: none;
-  background: white;
-  position: relative;
-  border: 1px solid #027fe65d;
-  border-radius: .25rem;
-  @include base-font;
-  cursor: pointer;
-  @include pseudo-border;
-  &:focus{
-    outline: none;
-    &:before{
-      left:0;
-      width:100%;
-      border-radius: .25rem;
-    }
-    &:after{
-      top: 0px;
-      height:100%;
-      border-radius: .25rem;
-    }
-  }
-  &:active{
-    background: #027fe6;
-    color: white;
-  }
-  &:disabled{
-    background: #f1f1f1;
-    cursor: not-allowed;
-    border: black;
-  }
-}

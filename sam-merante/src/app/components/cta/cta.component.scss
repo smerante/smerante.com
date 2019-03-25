@@ -15,6 +15,7 @@
     border-bottom: 2px solid #027fe6;
     border-top: 2px solid #027fe6;
     border-radius: 0;
+    -webkit-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
   }
   &:after{    
@@ -27,6 +28,7 @@
     border-left: 2px solid #027fe6;
     border-right: 2px solid #027fe6;
     border-radius: 0;
+    -webkit-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
   }
 }
@@ -54,7 +56,7 @@
       border-radius: .25rem;
     }
   }
-  &:active{
+  &:active,&:hover{
     background: #027fe6;
     color: white;
   }
@@ -74,6 +76,10 @@
     &:after{
       border-left: 2px solid #ffffff;
       border-right: 2px solid #ffffff;
+    }
+    &:active,&:hover{
+      background: white;
+      color: #027fe6;
     }
   }
   &--tertiary{

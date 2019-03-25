@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, HostBinding, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostBinding, Input, ElementRef, Renderer2, Host, HostListener } from '@angular/core';
 
 @Component({
   selector: '[sam-cta]',
@@ -21,6 +21,14 @@ export class CtaComponent implements OnInit {
     }
     else if(this.type === 'tertiary'){
       this.render.addClass(this.elRef.nativeElement,'sam-btn--tertiary');
+    }
+  }
+
+  @HostListener('mouseover')
+  onHover(){
+    let ua = navigator.userAgent;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+      this.elRef.nativeElement.click();
     }
   }
 

@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
 import { DocumentationModule } from './components/documentation/documentation.module';
 import { CtaComponent } from './components/cta/cta.component';
+import { InputComponent, InputWrapperComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import { CtaComponent } from './components/cta/cta.component';
     LoginComponent,
     AuthenticatedComponents,
     CtaComponent,
+    InputComponent,
+    InputWrapperComponent
   ],
   imports: [
     BrowserModule,

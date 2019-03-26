@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticatedComponents implements OnInit {
 
+  disabled: boolean = true;
+
   constructor() { }
 
   ngOnInit() {

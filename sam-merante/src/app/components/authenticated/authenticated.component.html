@@ -3,25 +3,59 @@
   <documentation-body>
     <div class="container">
       <div class="row  p-4">
-        <div class="col-sm-4 text-center p-1">
+        <div class="col-sm-4 p-1">
           <button sam-cta>Primary</button>
         </div>
-        <div class="col-sm-4 text-center p-1">
+        <div class="col-sm-4 p-1">
           <button sam-cta type="secondary">Secondary</button>
         </div>
-        <div class="col-sm-4 text-center p-1">
+        <div class="col-sm-4 p-1">
           <button sam-cta type="tertiary">Tertiary</button>
         </div>
       </div>
       <div class="row  p-4">
-        <div class="col-sm-4 text-center p-1">
+        <div class="col-sm-4 p-1">
           <button sam-cta small="true">Primary small</button>
         </div>
-        <div class="col-sm-4 text-center p-1">
-          <button sam-cta  small="true" type="secondary">Secondary small</button>
+        <div class="col-sm-4 p-1">
+          <button sam-cta small="true" type="secondary">Secondary small</button>
         </div>
-        <div class="col-sm-4 text-center p-1">
-          <button sam-cta  small="true" type="tertiary">Tertiary small</button>
+        <div class="col-sm-4 p-1">
+          <button sam-cta small="true" type="tertiary">Tertiary small</button>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+<sam-documentation>
+  <documentation-header>Inputs</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="userName" label="User name">
+            <input sam-input id="userName" aria-label="Please enter your user name to register" />
+          </sam-input-wrapper>
+        </div>
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="password" label="Password">
+            <input sam-input id="password" type="password" aria-label="Please enter your password to register" />
+          </sam-input-wrapper>
+        </div>
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="disabled" label="Disabled">
+            <input sam-input id="disabled" [disabled]="disabled" aria-label="Please enter your password to register" />
+          </sam-input-wrapper>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4 pb-2">
+            <button sam-cta (click)="disabled=!disabled">Toggle</button>
         </div>
       </div>
     </div>

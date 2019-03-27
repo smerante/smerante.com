@@ -55,7 +55,36 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4 pb-2">
-            <button sam-cta (click)="disabled=!disabled">Toggle</button>
+          <button sam-cta (click)="disabled=!disabled">Toggle</button>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+<sam-documentation>
+  <documentation-header>Checkbox</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 p-1">
+            <sam-checkbox label="Agree to terms and conditions" [check]="checkVal1" field_id="checkbox">
+              <input sam-checkbox id="checkbox" type="checkbox"  (input)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1" aria-label="Please check here to agree to terms and conditions" />
+            </sam-checkbox>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 p-1">
+            <sam-checkbox label="I like sports" [check]="checkVal2" field_id="checkbox2">
+              <input sam-checkbox id="checkbox2" type="checkbox"  (input)="checkVal2 = !checkVal2" (keydown.enter)="checkVal2 = !checkVal2" aria-label="Please check here to agree to terms and conditions" />
+            </sam-checkbox>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 p-1">
+            <sam-checkbox label="I am a disabled checkbox" [check]="checkVal3" field_id="checkbox3">
+              <input sam-checkbox id="checkbox3" disabled="true" type="checkbox"  (input)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3" aria-label="Please check here to agree to terms and conditions" />
+            </sam-checkbox>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import { AuthenticatedComponents } from './components/authenticated/authenticate
 import { DocumentationModule } from './components/documentation/documentation.module';
 import { CtaComponent } from './components/cta/cta.component';
 import { InputComponent, InputWrapperComponent } from './components/input/input.component';
+import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { InputComponent, InputWrapperComponent } from './components/input/input.
     AuthenticatedComponents,
     CtaComponent,
     InputComponent,
-    InputWrapperComponent
+    InputWrapperComponent,
+    CheckboxComponent,
+    CheckboxComponentWrapper
   ],
   imports: [
     BrowserModule,

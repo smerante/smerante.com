@@ -11,7 +11,6 @@ export class CheckboxComponentWrapper implements OnInit {
 
   @Input() field_id: string;
   @Input() label: string;
-  @Input() check: boolean;
   constructor() { }
 
   ngOnInit() {

@@ -1,11 +1,13 @@
 
 .sam-checkbox {
   &-wrapper{
+    cursor: pointer;
     display: inline-block;
     position: relative;
     min-height: 32px;
   }
   &--field{    
+    cursor: pointer;
     position: absolute;
     width: 0px;
     height: 0px;
@@ -17,7 +19,7 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    z-index: -1;
+    z-index: 1;
     &:focus + .sam-checkbox--label{
       &::before{
         outline: 2px solid #027fe66b;
@@ -32,11 +34,11 @@
     }
   }
   &--label{
+    cursor: pointer;
     display: inline-block;
     position: relative;
     height: 32px;
     left: 0px;
-    cursor: pointer;
     margin: 0px;
     line-height: 1;
     padding: 8px;

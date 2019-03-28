@@ -9,15 +9,15 @@
   &--field{    
     cursor: pointer;
     position: absolute;
-    width: 0px;
-    height: 0px;
+    width: 32px;
+    height: 32px;
     padding: 0px;
     margin: 0px;
     border: 0px;
     outline: 0px;
     top: 0px;
     bottom: 0px;
-    left: 0px;
+    left: -32px;
     right: 0px;
     z-index: 1;
     &:focus + .sam-checkbox--label{
@@ -30,6 +30,25 @@
       cursor: not-allowed;
       &::before{
         background: #aaa9a9;
+      }
+    }
+
+    &[checked="true"] + .sam-checkbox--label{
+      &::before{
+        border: 2px solid #027fe6;
+      }
+      &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        left: -16px;
+        width: 64px;
+        height: 32px;
+        border-bottom: 6px solid #027fe6;
+        border-left: 6px solid #027fe6;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg) scale(0.4,0.4);
       }
     }
   }
@@ -54,24 +73,6 @@
       margin-bottom: 0px;
       border: 1px solid #aaa9a9;
       background: white;
-    }
-    &[checked="true"]{
-      &::before{
-        border: 2px solid #027fe6;
-      }
-      &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        top: -3px;
-        left: -16px;
-        width: 64px;
-        height: 32px;
-        border-bottom: 6px solid #027fe6;
-        border-left: 6px solid #027fe6;
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg) scale(0.4,0.4);
-      }
     }
   }
 }

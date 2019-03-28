@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, Input, Directive, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, Directive, ViewEncapsulation, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'sam-checkbox',
@@ -15,6 +15,14 @@ export class CheckboxComponentWrapper implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  
+  @HostListener('mouseover')
+  onHover(){
+    let ua = navigator.userAgent;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+      document.getElementById(this.field_id).click();
+    }
   }
 
 }

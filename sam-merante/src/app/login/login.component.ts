@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       this.auth.signInUser(email, password)
         .then(() => {
           if (this.auth.isVerified()) {
-            this.router.navigate(['/components']);
+            this.router.navigate(['/components/authenticated']);
           } else {
             this.errorMessage = 'User not verified yet'
           }

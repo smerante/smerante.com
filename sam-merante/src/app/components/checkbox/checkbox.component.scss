@@ -9,17 +9,8 @@
   &--field{    
     cursor: pointer;
     position: absolute;
-    width: 32px;
-    height: 32px;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    outline: 0px;
-    top: 0px;
-    bottom: 0px;
-    left: -32px;
-    right: 0px;
-    z-index: 1;
+    position: absolute;
+    opacity: 0;
     &:focus + .sam-checkbox--label{
       &::before{
         outline: 2px solid #027fe66b;

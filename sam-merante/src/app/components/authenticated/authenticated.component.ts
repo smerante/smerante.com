@@ -11,10 +11,13 @@ export class AuthenticatedComponents implements OnInit {
   checkVal1: boolean = false;
   checkVal2: boolean = false;
   checkVal3: boolean = false;
-
+  toggleVal1: boolean = false;
+  toggleVal2: boolean = false;
+  toggleVal3: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

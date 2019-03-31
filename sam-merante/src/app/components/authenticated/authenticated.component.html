@@ -74,7 +74,7 @@
               aria-label="Please check here to agree to terms and conditions" />
           </sam-checkbox>
         </div>
-        <div class="pb-1 col-sm-4">
+        <div class="pb-1 pt-1 col-sm-4">
           <sam-checkbox
             label="This is a super long wrapping label to show placement of checkbox and label when text wraps"
             field_id="checkbox2">
@@ -83,12 +83,44 @@
               aria-label="Please check here to agree to terms and conditions" />
           </sam-checkbox>
         </div>
-        <div class="pb-1 col-sm-4">
+        <div class="pb-1 pt-1 col-sm-4">
           <sam-checkbox label="I am a disabled checkbox" field_id="checkbox3">
             <input sam-checkbox id="checkbox3" [attr.checked]="checkVal3 === true ? true : null" disabled="true"
               type="checkbox" (click)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3"
               aria-label="Please check here to agree to terms and conditions" />
           </sam-checkbox>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+
+<sam-documentation>
+  <documentation-header>Toggle</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="pb-1 pt-1 col-sm-4">
+          <sam-toggle label="Lock Credit Card" field_id="toggle1">
+            <input sam-toggle id="toggle1" [attr.checked]="toggleVal1 === true ? true : null" type="checkbox"
+              role="switch" (click)="toggleVal1 = !toggleVal1" aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4">
+          <sam-toggle
+            label="Long wrapping label to show placement of toggle and label"
+            field_id="toggle2">
+            <input sam-toggle id="toggle2" [attr.checked]="toggleVal2 === true ? true : null" type="checkbox"
+              role="switch" (click)="toggleVal2 = !toggleVal2" aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4">
+          <sam-toggle label="Lock Credit Card" field_id="toggle3">
+            <input sam-toggle disabled="true" id="toggle3" [attr.checked]="toggleVal3 === true ? true : null"
+              type="checkbox" role="switch" (click)="toggleVal3 = !toggleVal3"
+              aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
         </div>
       </div>
     </div>

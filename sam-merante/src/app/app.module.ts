@@ -18,6 +18,7 @@ import { DocumentationModule } from './components/documentation/documentation.mo
 import { CtaComponent } from './components/cta/cta.component';
 import { InputComponent, InputWrapperComponent } from './components/input/input.component';
 import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkbox/checkbox.component';
+import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkb
     InputComponent,
     InputWrapperComponent,
     CheckboxComponent,
-    CheckboxComponentWrapper
+    CheckboxComponentWrapper,
+    ToggleComponent,
+    ToggleComponentWrapper
   ],
   imports: [
     BrowserModule,

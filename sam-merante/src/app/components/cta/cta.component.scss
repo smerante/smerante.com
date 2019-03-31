@@ -96,16 +96,18 @@
       color: #027fe6;
     }
   }
+  &--small{    
+    min-height: 21px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    margin-left: 0;
+  }
   &--tertiary{
     border: 0px;
     line-height: 1;
     padding: 4px 4px;
     min-height: 0;
     margin: 8px 12px;
-  }
-  &--small{    
-    min-height: 21px;
-    padding: 4px 8px;
-    font-size: 0.75rem;
+    margin-left: 0;
   }
 }

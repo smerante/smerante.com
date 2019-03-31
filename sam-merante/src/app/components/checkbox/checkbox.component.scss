@@ -32,7 +32,7 @@
         content: '';
         display: block;
         position: absolute;
-        top: -3px;
+        top: calc(50% - 16px - 3px);
         left: -16px;
         width: 64px;
         height: 32px;
@@ -47,11 +47,9 @@
     cursor: pointer;
     display: inline-block;
     position: relative;
-    height: 32px;
     left: 0px;
     margin: 0px;
-    line-height: 1;
-    padding: 8px;
+    line-height: 2;
     padding-left: 40px;
     &::before{
       content: '';
@@ -59,7 +57,7 @@
       position: absolute;
       width: 32px;
       height: 32px;
-      top: 0px;
+      top: calc(50% - 16px);
       left: 0px;
       margin-bottom: 0px;
       border: 1px solid #aaa9a9;

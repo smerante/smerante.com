@@ -67,24 +67,28 @@
   <documentation-body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 p-1">
-            <sam-checkbox label="Agree to terms and conditions" field_id="checkbox">
-              <input sam-checkbox id="checkbox" [attr.checked]="checkVal1 === true ? true : null" type="checkbox"  (click)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1" aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
+        <div class="p-1 col-sm-4">
+          <sam-checkbox label="Agree to terms and conditions" field_id="checkbox">
+            <input sam-checkbox id="checkbox" [attr.checked]="checkVal1 === true ? true : null" type="checkbox"
+              (click)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 p-1">
-            <sam-checkbox label="I like sports" field_id="checkbox2">
-              <input sam-checkbox id="checkbox2" [attr.checked]="checkVal2 === true ? true : null" type="checkbox"  (input)="checkVal2 = !checkVal2" (keydown.enter)="checkVal2 = !checkVal2" aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
+        <div class="p-1 col-sm-4">
+          <sam-checkbox
+            label="This is a super long wrapping label to show placement of checkbox and label when text wraps"
+            field_id="checkbox2">
+            <input sam-checkbox id="checkbox2" [attr.checked]="checkVal2 === true ? true : null" type="checkbox"
+              (click)="checkVal2 = !checkVal2" (keydown.enter)="checkVal2 = !checkVal2"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 p-1">
-            <sam-checkbox label="I am a disabled checkbox" field_id="checkbox3">
-              <input sam-checkbox id="checkbox3" [attr.checked]="checkVal3 === true ? true : null" disabled="true" type="checkbox"  (input)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3" aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
+        <div class="p-1 col-sm-4">
+          <sam-checkbox label="I am a disabled checkbox" field_id="checkbox3">
+            <input sam-checkbox id="checkbox3" [attr.checked]="checkVal3 === true ? true : null" disabled="true"
+              type="checkbox" (click)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
         </div>
       </div>
     </div>

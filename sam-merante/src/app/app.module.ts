@@ -13,12 +13,13 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
-import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
+import { AuthenticatedComponents } from './forum/authenticated/authenticated.component';
 import { DocumentationModule } from './components/documentation/documentation.module';
 import { CtaComponent } from './components/cta/cta.component';
 import { InputComponent, InputWrapperComponent } from './components/input/input.component';
 import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkbox/checkbox.component';
 import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/toggle.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/tog
     CheckboxComponent,
     CheckboxComponentWrapper,
     ToggleComponent,
-    ToggleComponentWrapper
+    ToggleComponentWrapper,
+    ForumComponent
   ],
   imports: [
     BrowserModule,

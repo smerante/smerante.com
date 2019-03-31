@@ -8,21 +8,17 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./components.component.scss']
 })
 export class ComponentsComponent implements OnInit {
-  loggedIn: boolean;
-
-  constructor(private auth: AuthService, 
-    private router: Router,
-    private route: ActivatedRoute) { }
+  disabled: boolean = true;
+  checkVal1: boolean = false;
+  checkVal2: boolean = false;
+  checkVal3: boolean = false;
+  toggleVal1: boolean = false;
+  toggleVal2: boolean = false;
+  toggleVal3: boolean = false;
+  
+  constructor() { }
 
   ngOnInit() {
-    this.loggedIn = this.auth.isVerified();
-    console.log('user verified and logged in :', this.loggedIn);
-    if (this.loggedIn) {
-      this.router.navigate(['authenticated'], {relativeTo: this.route});
-    }
   }
 
-  goTo(page: string) {
-    this.router.navigate(['/' + page]);
-  }
 }

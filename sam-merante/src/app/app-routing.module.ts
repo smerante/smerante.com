@@ -7,13 +7,15 @@ import { CodeComponent } from './code/code.component';
 import { ComponentsComponent } from './components/components.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { AuthenticatedComponents } from './components/authenticated/authenticated.component';
+import { AuthenticatedComponents } from './forum/authenticated/authenticated.component';
 import { AuthGuardService } from './auth-guard.service';
+import { ForumComponent } from './forum/forum.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'components', component: ComponentsComponent, children:[
+  { path: 'components', component: ComponentsComponent},
+  { path: 'forum', component: ForumComponent, children:[
     { path: 'authenticated', component: AuthenticatedComponents, canActivate: [AuthGuardService]}
   ]},
   { path: 'code', component: CodeComponent},

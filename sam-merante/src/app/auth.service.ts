@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import * as firebase from 'firebase';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

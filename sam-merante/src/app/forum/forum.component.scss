@@ -1,0 +1,34 @@
+@import '../components/components.component.scss';
+
+.messageWrapper{
+  margin: 16px auto;
+  width: 90%;
+  box-shadow: 1px 1px 10px 1px #8888886e;
+  border: 1px solid #aaa9a9;
+  border-radius: 10px;
+}
+.date{
+  @include base-font();
+  font-size: 0.75rem;
+  border-right: 1px solid #aaa9a9;
+}
+
+.email{
+  @include base-font();
+  font-size: 0.75rem;
+}
+.message{
+  border-top: 1px solid #aaa9a9;
+  padding: 8px;
+}
+.reload{
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+@media screen and (max-width: 575.7px) {
+  .date{
+    border-right: 0;
+  }
+}

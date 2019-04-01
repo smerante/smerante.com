@@ -20,6 +20,7 @@ import { InputComponent, InputWrapperComponent } from './components/input/input.
 import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkbox/checkbox.component';
 import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/toggle.component';
 import { ForumComponent } from './forum/forum.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ForumComponent } from './forum/forum.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DocumentationModule
+    DocumentationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

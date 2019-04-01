@@ -7,7 +7,8 @@ import * as firebase from 'firebase';
 })
 export class AuthService {
   isSignedIn: boolean;
-
+  email: string;
+  token: string;
   constructor() { }
 
   signupUser(email: string, password: string, name?: string) {
@@ -27,13 +28,29 @@ export class AuthService {
   verifyEmail() {
     return firebase.auth().currentUser.sendEmailVerification().then(
       (verified) => {
-        console.log('Sending verifcation email :', firebase.auth().currentUser.email);
+        this.email = firebase.auth().currentUser.email;
+        firebase.auth().currentUser.getIdToken()
+          .then(
+            (token: string) => {
+              this.token = token;
+            }
+          );
+        console.log('Sending verifcation email :', this.email);
         return verified;
       });
   }
 
   isVerified(): boolean {
     let verified = firebase.auth().currentUser ? firebase.auth().currentUser.emailVerified : false;
+    if(verified){
+      this.email = firebase.auth().currentUser.email;
+      firebase.auth().currentUser.getIdToken()
+        .then(
+          (token: string) => {
+            this.token = token;
+          }
+        );
+    }
     console.log('logged in: ' , verified ? firebase.auth().currentUser : '');
     return verified;
   }

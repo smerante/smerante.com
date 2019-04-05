@@ -21,6 +21,7 @@ import { CheckboxComponent, CheckboxComponentWrapper } from './components/checkb
 import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/toggle.component';
 import { ForumComponent } from './forum/forum.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RadiosComponent, RadioGroupComponent } from './components/radios/radios.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { HttpClientModule } from '@angular/common/http';
     CheckboxComponentWrapper,
     ToggleComponent,
     ToggleComponentWrapper,
-    ForumComponent
+    ForumComponent,
+    RadiosComponent,
+    RadioGroupComponent
   ],
   imports: [
     BrowserModule,

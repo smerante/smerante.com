@@ -1,128 +1,194 @@
 <sam-documentation>
-    <documentation-header>CTA'S</documentation-header>
-    <documentation-body>
-      <div class="container">
-        <div class="row  p-4">
-          <div class="col-sm-4 p-1">
-            <button sam-cta>Primary</button>
-          </div>
-          <div class="col-sm-4 p-1">
-            <button sam-cta type="secondary">Secondary</button>
-          </div>
-          <div class="col-sm-4 p-1">
-            <button sam-cta type="tertiary">Tertiary</button>
-          </div>
+  <documentation-header>CTA'S</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row  p-4">
+        <div class="col-sm-4 p-1">
+          <button sam-cta>Primary</button>
         </div>
-        <div class="row  p-4">
-          <div class="col-sm-4 p-1">
-            <button sam-cta small="true">Primary small</button>
-          </div>
-          <div class="col-sm-4 p-1">
-            <button sam-cta small="true" type="secondary">Secondary small</button>
-          </div>
-          <div class="col-sm-4 p-1">
-            <button sam-cta small="true" type="tertiary">Tertiary small</button>
-          </div>
+        <div class="col-sm-4 p-1">
+          <button sam-cta type="secondary">Secondary</button>
+        </div>
+        <div class="col-sm-4 p-1">
+          <button sam-cta type="tertiary">Tertiary</button>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
-  
-  <sam-documentation>
-    <documentation-header>Inputs</documentation-header>
-    <documentation-body>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <sam-input-wrapper field_id="userName" label="User name">
-              <input sam-input id="userName" aria-label="Please enter your user name to register" />
-            </sam-input-wrapper>
-          </div>
-          <div class="col-sm-4">
-            <sam-input-wrapper field_id="password" label="Password">
-              <input sam-input id="password" type="password" aria-label="Please enter your password to register" />
-            </sam-input-wrapper>
-          </div>
-          <div class="col-sm-4">
-            <sam-input-wrapper field_id="disabled" label="Disabled">
-              <input sam-input id="disabled" [disabled]="disabled" aria-label="Please enter your password to register" />
-            </sam-input-wrapper>
-          </div>
+      <div class="row  p-4">
+        <div class="col-sm-4 p-1">
+          <button sam-cta small="true">Primary small</button>
         </div>
-        <div class="row">
-          <div class="col-sm-4">
-          </div>
-          <div class="col-sm-4">
-          </div>
-          <div class="col-sm-4 pb-2">
-            <button sam-cta (click)="disabled=!disabled">Toggle</button>
-          </div>
+        <div class="col-sm-4 p-1">
+          <button sam-cta small="true" type="secondary">Secondary small</button>
+        </div>
+        <div class="col-sm-4 p-1">
+          <button sam-cta small="true" type="tertiary">Tertiary small</button>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
-  
-  <sam-documentation>
-    <documentation-header>Checkbox</documentation-header>
-    <documentation-body>
-      <div class="container">
-        <div class="row">
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-checkbox label="Agree to terms and conditions" field_id="checkbox">
-              <input sam-checkbox id="checkbox" [attr.checked]="checkVal1 === true ? true : null" type="checkbox"
-                (click)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1"
-                aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
-          </div>
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-checkbox
-              label="This is a super long wrapping label to show placement of checkbox and label when text wraps"
-              field_id="checkbox2">
-              <input sam-checkbox id="checkbox2" [attr.checked]="checkVal2 === true ? true : null" type="checkbox"
-                (click)="checkVal2 = !checkVal2" (keydown.enter)="checkVal2 = !checkVal2"
-                aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
-          </div>
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-checkbox label="I am a disabled checkbox" field_id="checkbox3">
-              <input sam-checkbox id="checkbox3" [attr.checked]="checkVal3 === true ? true : null" disabled="true"
-                type="checkbox" (click)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3"
-                aria-label="Please check here to agree to terms and conditions" />
-            </sam-checkbox>
-          </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+<sam-documentation>
+  <documentation-header>Inputs</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="userName" label="User name">
+            <input sam-input id="userName" aria-label="Please enter your user name to register" />
+          </sam-input-wrapper>
+        </div>
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="password" label="Password">
+            <input sam-input id="password" type="password" aria-label="Please enter your password to register" />
+          </sam-input-wrapper>
+        </div>
+        <div class="col-sm-4">
+          <sam-input-wrapper field_id="disabled" label="Disabled">
+            <input sam-input id="disabled" [disabled]="disabled" aria-label="Please enter your password to register" />
+          </sam-input-wrapper>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
-  
-  
-  <sam-documentation>
-    <documentation-header>Toggle</documentation-header>
-    <documentation-body>
-      <div class="container">
-        <div class="row">
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-toggle label="Lock Credit Card" field_id="toggle1">
-              <input sam-toggle id="toggle1" [attr.checked]="toggleVal1 === true ? true : null" type="checkbox"
-                role="switch" (click)="toggleVal1 = !toggleVal1" aria-label="Lock credit card toggle switch" />
-            </sam-toggle>
-          </div>
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-toggle
-              label="Long wrapping label to show placement of toggle and label"
-              field_id="toggle2">
-              <input sam-toggle id="toggle2" [attr.checked]="toggleVal2 === true ? true : null" type="checkbox"
-                role="switch" (click)="toggleVal2 = !toggleVal2" aria-label="Lock credit card toggle switch" />
-            </sam-toggle>
-          </div>
-          <div class="pb-1 pt-1 col-sm-4">
-            <sam-toggle label="Disabled toggle" field_id="toggle3">
-              <input sam-toggle disabled="true" id="toggle3" [attr.checked]="toggleVal3 === true ? true : null"
-                type="checkbox" role="switch" (click)="toggleVal3 = !toggleVal3"
-                aria-label="Lock credit card toggle switch" />
-            </sam-toggle>
-          </div>
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4 pb-2">
+          <button sam-cta (click)="disabled=!disabled">Toggle</button>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+<sam-documentation>
+  <documentation-header>Checkbox</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-checkbox label="Agree to terms and conditions" field_id="checkbox">
+            <input sam-checkbox id="checkbox" [attr.checked]="checkVal1 === true ? true : null" type="checkbox"
+              (click)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-checkbox
+            label="This is a super long wrapping label to show placement of checkbox and label when text wraps"
+            field_id="checkbox2">
+            <input sam-checkbox id="checkbox2" [attr.checked]="checkVal2 === true ? true : null" type="checkbox"
+              (click)="checkVal2 = !checkVal2" (keydown.enter)="checkVal2 = !checkVal2"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-checkbox label="I am a disabled checkbox" field_id="checkbox3">
+            <input sam-checkbox id="checkbox3" [attr.checked]="checkVal3 === true ? true : null" disabled="true"
+              type="checkbox" (click)="checkVal3 = !checkVal3" (keydown.enter)="checkVal3 = !checkVal3"
+              aria-label="Please check here to agree to terms and conditions" />
+          </sam-checkbox>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+
+<sam-documentation>
+  <documentation-header>Toggle</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-toggle label="Lock Credit Card" field_id="toggle1">
+            <input sam-toggle id="toggle1" [attr.checked]="toggleVal1 === true ? true : null" type="checkbox"
+              role="switch" (click)="toggleVal1 = !toggleVal1" aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-toggle label="Long wrapping label to show placement of toggle and label" field_id="toggle2">
+            <input sam-toggle id="toggle2" [attr.checked]="toggleVal2 === true ? true : null" type="checkbox"
+              role="switch" (click)="toggleVal2 = !toggleVal2" aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
+        </div>
+        <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
+          <sam-toggle label="Disabled toggle" field_id="toggle3">
+            <input sam-toggle disabled="true" id="toggle3" [attr.checked]="toggleVal3 === true ? true : null"
+              type="checkbox" role="switch" (click)="toggleVal3 = !toggleVal3"
+              aria-label="Lock credit card toggle switch" />
+          </sam-toggle>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+
+<sam-documentation>
+  <documentation-header>Radio Buttons</documentation-header>
+  <documentation-body>
+    <div class="container">
+      <div class="row">
+        <div class="pb-1 pt-1 col-sm-6">
+          <sam-radio-group #r1 groupLabel="Please select a gender">
+              <sam-radio-btn id="male" label="Male">
+                <input 
+                type="radio"
+                id="male"
+                name="gender" 
+                (click)="r1.check('male');"
+                value="male"/>
+            </sam-radio-btn>
+            <sam-radio-btn id="female" label="Female">
+                <input 
+                type="radio"
+                id="female"
+                name="gender" 
+                (click)="r1.check('female');"
+                value="female"/>
+            </sam-radio-btn>
+            <sam-radio-btn id="other" label="Other">
+                <input 
+                type="radio"
+                id="other"
+                name="gender"  
+                (click)="r1.check('other');"
+                value="other"/>
+            </sam-radio-btn>
+          </sam-radio-group>
+        </div>
+        <div class="pb-1 pt-1 col-sm-6">
+          <sam-radio-group #r2 groupLabel="Please select the type of label you like">
+              <sam-radio-btn id="short" label="Short">
+                <input 
+                type="radio"
+                id="short"
+                name="gender" 
+                (click)="r2.check('short');"
+                value="short"/>
+            </sam-radio-btn>
+            <sam-radio-btn id="long" label="I like super super super super super super super super super super super super long labels">
+                <input 
+                type="radio"
+                id="long"
+                name="gender" 
+                (click)="r2.check('long');"
+                value="long"/>
+            </sam-radio-btn>
+            <sam-radio-btn id="disabled" label="Disabled labels" [disabled]="true">
+                <input 
+                type="radio"
+                id="disabled"
+                name="gender" 
+                disabled
+                (click)="r2.check('disabled');"
+                value="disabled"/>
+            </sam-radio-btn>
+          </sam-radio-group>
+        </div>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>

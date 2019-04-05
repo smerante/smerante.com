@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-components',
@@ -16,6 +17,8 @@ export class ComponentsComponent implements OnInit {
   toggleVal2: boolean = false;
   toggleVal3: boolean = false;
   
+  maleChecked: boolean = false;
+
   constructor() { }
 
   ngOnInit() {

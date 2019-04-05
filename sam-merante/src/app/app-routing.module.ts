@@ -23,7 +23,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'cv', component: CVComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '*', redirectTo: '/home' }
+  { path: '*', redirectTo: '/home' },
+  {path: '404', redirectTo: '/home' },
+  {path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

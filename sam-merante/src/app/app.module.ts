@@ -23,6 +23,8 @@ import { ForumComponent } from './forum/forum.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RadiosComponent, RadioGroupComponent } from './components/radios/radios.component';
 
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,7 @@ import { RadiosComponent, RadioGroupComponent } from './components/radios/radios
     DocumentationModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

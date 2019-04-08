@@ -2,7 +2,7 @@
 
 .sam-radio-btn{
   display: inline-block;
-  padding: 0px 16px 8px 0px;
+  padding: 0 16px 16px 0;
   @media screen and ( max-width: 425px){ 
     display: block;
   }
@@ -15,6 +15,7 @@
 
 .sam-radio-container{
   cursor: pointer;
+  position: relative;
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -27,7 +28,7 @@
   .sam-radio-label{
     @include base-font();
     display: inline;
-    margin-left: 8px;
+    margin-left: 40px;
     cursor: pointer;
     display: inline-block;
   }
@@ -42,10 +43,11 @@
 }
 
 .radio-btn {
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 32px;
   height: 32px;
+  top: calc(50%  - 16px);
   border: 1px solid #929191;
   border-radius: 50px;
   vertical-align: middle;

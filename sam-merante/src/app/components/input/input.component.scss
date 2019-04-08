@@ -36,7 +36,7 @@
   position: relative;
   margin: 24px;
   margin-left: 0px;
-  width: calc(100% - 48px);
+  width: 100%;
   @include pseudo-border;
   &:focus-within{
     outline: none;

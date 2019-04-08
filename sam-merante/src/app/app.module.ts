@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RadiosComponent, RadioGroupComponent } from './components/radios/radios.component';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ModalModule } from './components/modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ToggleComponentWrapper,
     ForumComponent,
     RadiosComponent,
-    RadioGroupComponent
+    RadioGroupComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     DocumentationModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

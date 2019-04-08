@@ -1,7 +1,7 @@
 <sam-documentation>
   <documentation-header>CTA'S</documentation-header>
   <documentation-body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row  p-4">
         <div class="col-sm-4 p-1">
           <button sam-cta>Primary</button>
@@ -31,7 +31,7 @@
 <sam-documentation>
   <documentation-header>Inputs</documentation-header>
   <documentation-body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4">
           <sam-input-wrapper field_id="userName" label="User name">
@@ -65,7 +65,7 @@
 <sam-documentation>
   <documentation-header>Checkbox</documentation-header>
   <documentation-body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
           <sam-checkbox label="Agree to terms and conditions" field_id="checkbox">
@@ -99,7 +99,7 @@
 <sam-documentation>
   <documentation-header>Toggle</documentation-header>
   <documentation-body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="pb-1 pt-1 col-sm-4" style="margin: auto 0;">
           <sam-toggle label="Lock Credit Card" field_id="toggle1">
@@ -129,7 +129,7 @@
 <sam-documentation>
   <documentation-header>Radio Buttons</documentation-header>
   <documentation-body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="pb-1 pt-1 col-sm-6">
           <sam-radio-group #r1 groupLabel="Please select a gender">
@@ -192,3 +192,99 @@
     </div>
   </documentation-body>
 </sam-documentation>
+
+
+
+<sam-documentation>
+    <documentation-header>Modal Windows</documentation-header>
+    <documentation-body>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="p-5 col-sm-12 text-center">
+            <button (click)="modal.open();" sam-cta>Open Modal</button>
+            <sam-modal #modal>
+                <sam-modal-header>Sign Up Modal Example</sam-modal-header>
+                <sam-modal-body>
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <sam-input-wrapper field_id="modalName" label="User name">
+                          <input sam-input id="modalName" aria-label="Please enter your user name to register" />
+                        </sam-input-wrapper>
+                      </div>
+                      <div class="col-sm-6">
+                        <sam-input-wrapper field_id="modalPW" label="Password">
+                          <input sam-input id="modalPW" type="password" aria-label="Please enter your password to register" />
+                        </sam-input-wrapper>
+                      </div>
+                    </div>
+
+                    <sam-radio-group #r2 groupLabel="Please select a gender">
+                        <sam-radio-btn id="male" label="Male">
+                          <input 
+                          type="radio"
+                          id="male"
+                          name="gender" 
+                          (click)="r2.check('male');"
+                          value="male"/>
+                      </sam-radio-btn>
+                      <sam-radio-btn id="female" label="Female">
+                          <input 
+                          type="radio"
+                          id="female"
+                          name="gender" 
+                          (click)="r2.check('female');"
+                          value="female"/>
+                      </sam-radio-btn>
+                      <sam-radio-btn id="other" label="Other">
+                          <input 
+                          type="radio"
+                          id="other"
+                          name="gender"  
+                          (click)="r2.check('other');"
+                          value="other"/>
+                      </sam-radio-btn>
+                    </sam-radio-group>
+
+                    <div class="row">
+                      <div class="col-sm-12 pt-3 pb-3">
+                        <sam-checkbox label="Agree to terms and conditions" field_id="modalCheckbox">
+                          <input sam-checkbox id="modalCheckbox" [attr.checked]="checkVal1 === true ? true : null" type="checkbox"
+                            (click)="checkVal1 = !checkVal1" (keydown.enter)="checkVal1 = !checkVal1"
+                            aria-label="Please check here to agree to terms and conditions" />
+                        </sam-checkbox>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-3">
+                        <button (click)="modal.close();" sam-cta>Save</button>
+                      </div>
+                      <div class="col-sm-3">
+                        <button (click)="modal.close();" sam-cta>Cancel</button>
+                      </div>
+                      <div class="col-sm-3"></div>
+                    </div>
+                  </div>
+                </sam-modal-body>
+                <sam-modal-footer>
+                    <div class="card-footer text-muted">
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+                            <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+                            <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+                          </div>
+                          <div class="col-sm-2">
+                            <span class="date">{{date | date:'MM-dd-yyyy'}}</span>
+                          </div>
+                        </div>
+                      </div>
+                </sam-modal-footer>
+            </sam-modal>
+          </div>
+        </div>
+      </div>
+    </documentation-body>
+  </sam-documentation>

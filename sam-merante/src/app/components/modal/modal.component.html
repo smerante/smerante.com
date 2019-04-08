@@ -1,0 +1,8 @@
+<span class="overlay" (click)="close();"></span>
+<div class="sam-modal-container">
+  <span class="sam-modal-container"></span>
+  <ng-content select="sam-modal-header"></ng-content>
+  <ng-content select="sam-modal-body"></ng-content>
+  <ng-content select="sam-modal-footer"></ng-content>
+  <span tabindex="0" role="button" aria-label="close modal window" (click)="close();" class="sam-modal-close"></span>
+</div>

@@ -18,7 +18,8 @@ export class ComponentsComponent implements OnInit {
   toggleVal3: boolean = false;
   
   maleChecked: boolean = false;
-
+  date = new Date();
+  
   constructor() { }
 
   ngOnInit() {

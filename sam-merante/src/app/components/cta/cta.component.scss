@@ -36,7 +36,8 @@
   @include base-font;
   @include pseudo-border;
   position: relative;
-  min-height: 42px;
+  min-height: 52px;
+  min-width: 132px;
   padding: 8px 16px;
   background: white;
   border: 1px solid #027fe65d;

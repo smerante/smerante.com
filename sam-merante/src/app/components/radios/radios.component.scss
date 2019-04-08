@@ -8,11 +8,17 @@
   }
 }
 
+.sam-radio-group{
+  display: block;
+  width: 100%;
+}
+
 .sam-radio-container{
   cursor: pointer;
   margin: 0;
   padding: 0;
-  display: inline;
+  display: inline-block;
+  width: 100%;
   input{
     position: absolute;
     opacity: 0;
@@ -23,6 +29,7 @@
     display: inline;
     margin-left: 8px;
     cursor: pointer;
+    display: inline-block;
   }
 }
 

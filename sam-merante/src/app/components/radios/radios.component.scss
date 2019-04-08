@@ -12,9 +12,11 @@
   cursor: pointer;
   margin: 0;
   padding: 0;
+  display: inline;
   input{
     position: absolute;
     opacity: 0;
+    display: inline;
   }
   .sam-radio-label{
     @include base-font();

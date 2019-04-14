@@ -22,6 +22,7 @@ import { ToggleComponent, ToggleComponentWrapper } from './components/toggle/tog
 import { ForumComponent } from './forum/forum.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RadiosComponent, RadioGroupComponent } from './components/radios/radios.component';
+import { CardsModule } from './components/cards/cards.module';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalModule } from './components/modal/modal.module';
@@ -57,7 +58,8 @@ import { ModalModule } from './components/modal/modal.module';
     ReactiveFormsModule,
     DocumentationModule,
     HttpClientModule,
-    ModalModule
+    ModalModule,
+    CardsModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

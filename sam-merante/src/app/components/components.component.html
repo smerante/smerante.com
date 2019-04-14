@@ -3,24 +3,24 @@
   <documentation-body>
     <div class="container-fluid">
       <div class="row  p-4">
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta>Primary</button>
         </div>
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta type="secondary">Secondary</button>
         </div>
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta type="tertiary">Tertiary</button>
         </div>
       </div>
       <div class="row  p-4">
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta small="true">Primary small</button>
         </div>
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta small="true" type="secondary">Secondary small</button>
         </div>
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4 p-1 text-center">
           <button sam-cta small="true" type="tertiary">Tertiary small</button>
         </div>
       </div>
@@ -133,58 +133,29 @@
       <div class="row">
         <div class="pb-1 pt-1 col-sm-6">
           <sam-radio-group #r1 groupLabel="Please select a gender">
-              <sam-radio-btn id="male" label="Male">
-                <input 
-                type="radio"
-                id="male"
-                name="gender" 
-                (click)="r1.check('male');"
-                value="male"/>
+            <sam-radio-btn id="male" label="Male">
+              <input type="radio" id="male" name="gender" (click)="r1.check('male');" value="male" />
             </sam-radio-btn>
             <sam-radio-btn id="female" label="Female">
-                <input 
-                type="radio"
-                id="female"
-                name="gender" 
-                (click)="r1.check('female');"
-                value="female"/>
+              <input type="radio" id="female" name="gender" (click)="r1.check('female');" value="female" />
             </sam-radio-btn>
             <sam-radio-btn id="other" label="Other">
-                <input 
-                type="radio"
-                id="other"
-                name="gender"  
-                (click)="r1.check('other');"
-                value="other"/>
+              <input type="radio" id="other" name="gender" (click)="r1.check('other');" value="other" />
             </sam-radio-btn>
           </sam-radio-group>
         </div>
         <div class="pb-1 pt-1 col-sm-6">
           <sam-radio-group #r2 groupLabel="Please select the type of label you like">
-              <sam-radio-btn id="short" label="Short">
-                <input 
-                type="radio"
-                id="short"
-                name="gender" 
-                (click)="r2.check('short');"
-                value="short"/>
+            <sam-radio-btn id="short" label="Short">
+              <input type="radio" id="short" name="gender" (click)="r2.check('short');" value="short" />
             </sam-radio-btn>
-            <sam-radio-btn id="long" label="I like super super super super super super super super super super super super long labels">
-                <input 
-                type="radio"
-                id="long"
-                name="gender" 
-                (click)="r2.check('long');"
-                value="long"/>
+            <sam-radio-btn id="long"
+              label="I like super super super super super super super super super super super super long labels">
+              <input type="radio" id="long" name="gender" (click)="r2.check('long');" value="long" />
             </sam-radio-btn>
             <sam-radio-btn id="disabled" label="Disabled labels" [disabled]="true">
-                <input 
-                type="radio"
-                id="disabled"
-                name="gender" 
-                disabled
-                (click)="r2.check('disabled');"
-                value="disabled"/>
+              <input type="radio" id="disabled" name="gender" disabled (click)="r2.check('disabled');"
+                value="disabled" />
             </sam-radio-btn>
           </sam-radio-group>
         </div>
@@ -196,95 +167,194 @@
 
 
 <sam-documentation>
-    <documentation-header>Modal Windows</documentation-header>
-    <documentation-body>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="p-5 col-sm-12 text-center">
-            <button (click)="modal.open();" sam-cta>Open Modal</button>
-            <sam-modal #modal>
-                <sam-modal-header>Sign Up Modal Example</sam-modal-header>
-                <sam-modal-body>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <sam-input-wrapper field_id="modalName" label="User name">
-                          <input sam-input id="modalName" aria-label="Please enter your user name to register" />
-                        </sam-input-wrapper>
-                      </div>
-                      <div class="col-sm-6">
-                        <sam-input-wrapper field_id="modalPW" label="Password">
-                          <input sam-input id="modalPW" type="password" aria-label="Please enter your password to register" />
-                        </sam-input-wrapper>
-                      </div>
-                    </div>
-
-                    <sam-radio-group #r3 groupLabel="Please select a gender">
-                        <sam-radio-btn id="male" label="Male">
-                          <input 
-                          type="radio"
-                          id="male"
-                          name="gender" 
-                          (click)="r3.check('male');"
-                          value="male"/>
-                      </sam-radio-btn>
-                      <sam-radio-btn id="female" label="Female">
-                          <input 
-                          type="radio"
-                          id="female"
-                          name="gender" 
-                          (click)="r3.check('female');"
-                          value="female"/>
-                      </sam-radio-btn>
-                      <sam-radio-btn id="other" label="Other">
-                          <input 
-                          type="radio"
-                          id="other"
-                          name="gender"  
-                          (click)="r3.check('other');"
-                          value="other"/>
-                      </sam-radio-btn>
-                    </sam-radio-group>
-
-                    <div class="row">
-                      <div class="col-sm-12 pt-3 pb-3">
-                        <sam-checkbox label="Agree to terms and conditions" field_id="modalCheckbox">
-                          <input sam-checkbox id="modalCheckbox" [attr.checked]="toggleVal4 === true ? true : null" type="checkbox"
-                            (click)="toggleVal4 = !toggleVal4" (keydown.enter)="toggleVal4 = !toggleVal4"
-                            aria-label="Please check here to agree to terms and conditions" />
-                        </sam-checkbox>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-3"></div>
-                      <div class="col-sm-3">
-                        <button (click)="modal.close();" sam-cta>Save</button>
-                      </div>
-                      <div class="col-sm-3">
-                        <button (click)="modal.close();" sam-cta>Cancel</button>
-                      </div>
-                      <div class="col-sm-3"></div>
-                    </div>
+  <documentation-header>Modal Windows</documentation-header>
+  <documentation-body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="p-5 col-sm-12 text-center">
+          <button (click)="modal.open();" sam-cta>Open Modal</button>
+          <sam-modal #modal>
+            <sam-modal-header>Sign Up Modal Example</sam-modal-header>
+            <sam-modal-body>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <sam-input-wrapper field_id="modalName" label="User name">
+                      <input sam-input id="modalName" aria-label="Please enter your user name to register" />
+                    </sam-input-wrapper>
                   </div>
-                </sam-modal-body>
-                <sam-modal-footer>
-                    <div class="card-footer text-muted">
-                        <div class="row">
-                          <div class="col-sm-10">
-                            <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
-                            <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
-                            <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
-                          </div>
-                          <div class="col-sm-2">
-                            <span class="date">{{date | date:'MM-dd-yyyy'}}</span>
-                          </div>
-                        </div>
-                      </div>
-                </sam-modal-footer>
-            </sam-modal>
-          </div>
+                  <div class="col-sm-6">
+                    <sam-input-wrapper field_id="modalPW" label="Password">
+                      <input sam-input id="modalPW" type="password"
+                        aria-label="Please enter your password to register" />
+                    </sam-input-wrapper>
+                  </div>
+                </div>
+
+                <sam-radio-group #r3 groupLabel="Please select a gender">
+                  <sam-radio-btn id="male" label="Male">
+                    <input type="radio" id="male" name="gender" (click)="r3.check('male');" value="male" />
+                  </sam-radio-btn>
+                  <sam-radio-btn id="female" label="Female">
+                    <input type="radio" id="female" name="gender" (click)="r3.check('female');" value="female" />
+                  </sam-radio-btn>
+                  <sam-radio-btn id="other" label="Other">
+                    <input type="radio" id="other" name="gender" (click)="r3.check('other');" value="other" />
+                  </sam-radio-btn>
+                </sam-radio-group>
+
+                <div class="row">
+                  <div class="col-sm-12 pt-3 pb-3">
+                    <sam-checkbox label="Agree to terms and conditions" field_id="modalCheckbox">
+                      <input sam-checkbox id="modalCheckbox" [attr.checked]="toggleVal4 === true ? true : null"
+                        type="checkbox" (click)="toggleVal4 = !toggleVal4" (keydown.enter)="toggleVal4 = !toggleVal4"
+                        aria-label="Please check here to agree to terms and conditions" />
+                    </sam-checkbox>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3">
+                    <button (click)="modal.close();" sam-cta>Save</button>
+                  </div>
+                  <div class="col-sm-3">
+                    <button (click)="modal.close();" sam-cta>Cancel</button>
+                  </div>
+                  <div class="col-sm-3"></div>
+                </div>
+              </div>
+            </sam-modal-body>
+            <sam-modal-footer>
+              <div class="card-footer text-muted">
+                <div class="row">
+                  <div class="col-sm-10">
+                    <a class="card-link" target="_blank"
+                      href="https://github.com/smerante/smerante.github.io">GitHub</a>
+                    <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+                    <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+                  </div>
+                  <div class="col-sm-2">
+                    <span class="date">{{date | date:'MM-dd-yyyy'}}</span>
+                  </div>
+                </div>
+              </div>
+            </sam-modal-footer>
+          </sam-modal>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+
+
+<sam-documentation>
+  <documentation-header>Cards</documentation-header>
+  <documentation-body>
+    <div class="row">
+      <div class="col-sm-6">
+          <sam-card>
+            <card-header>
+              Default Card
+            </card-header>
+            <card-body>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+              </p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est
+                laborum.
+              </p>
+            </card-body>
+            <card-footer>
+              <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+              <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+              <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+            </card-footer>
+          </sam-card>
+      </div>
+      <div class="col-sm-6">
+          <sam-card imgSrc="http://robertwimer.com/wp-content/uploads/2018/06/Matrix-Code.jpg">
+            <card-header>
+              With Image
+            </card-header>
+            <card-body>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+              </p>
+            </card-body>
+            <card-footer>
+              <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+              <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+              <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+            </card-footer>
+          </sam-card>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <sam-card placement="left" imgSrc="http://robertwimer.com/wp-content/uploads/2018/06/Matrix-Code.jpg">
+              <card-header>
+                Placement Left
+              </card-header>
+              <card-body>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </card-body>
+              <card-footer>
+                <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+                <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+                <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+              </card-footer>
+            </sam-card>
+        </div>
+        <div class="col-sm-12">
+            <sam-card placement="right" imgSrc="http://robertwimer.com/wp-content/uploads/2018/06/Matrix-Code.jpg">
+              <card-header>
+                Placement Right
+              </card-header>
+              <card-body>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </card-body>
+              <card-footer>
+                <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+                <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+                <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+              </card-footer>
+            </sam-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <sam-card placement="bottom" imgSrc="http://robertwimer.com/wp-content/uploads/2018/06/Matrix-Code.jpg">
+            <card-header>
+              Placement Bottom
+            </card-header>
+            <card-body>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+              </p>
+            </card-body>
+            <card-footer>
+              <a class="card-link" target="_blank" href="https://github.com/smerante/smerante.github.io">GitHub</a>
+              <a class="card-link" target="_blank" href="https://bitbucket.org/Sammer95/">Bitbucket</a>
+              <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
+            </card-footer>
+          </sam-card>
+        </div>
+      </div>
+  </documentation-body>
+</sam-documentation>

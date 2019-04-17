@@ -61,7 +61,7 @@
   &--container{
     display: block;
     position: fixed;
-    min-width: 128px;
+    min-width: 248px;
     min-height: 56px;
     background: #ffffff;
     border-radius: 10px;
@@ -69,6 +69,7 @@
     box-shadow: 1px 1px 10px 1px #8888886e;
     padding: 16px;
     padding-right: 24px;
+    margin:  0px 16px;
     z-index: 9999;
   }
   &--container__close{

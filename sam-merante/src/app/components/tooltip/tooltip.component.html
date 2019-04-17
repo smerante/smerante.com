@@ -1,4 +1,4 @@
-<button [id]="tooltipId" class="sam-tooltip--btn" (blur)="closeTooltip();" (click)="toggleTooltip();" [attr.aria-label]="tooltipAriaLabel">
+<button [id]="tooltipId" class="sam-tooltip--btn" (click)="toggleTooltip();" (blur)="closeTooltip();" [attr.aria-label]="tooltipAriaLabel">
     <span *ngIf="contentOpen" class="sam-tooltip--chevron"></span>
   </button>
 <label [for]="tooltipId" class="sam-tooltip--label" [innerHtml]="tooltipLabel"></label>

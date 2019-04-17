@@ -1,0 +1,120 @@
+@import '../components.component.scss';
+
+.sam-tooltip {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8px 4px;
+  &--label{
+    @include base-font();
+    display: inline;
+    cursor: pointer;
+  }
+  &--btn{
+    display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.15s;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    outline: 0;
+    color: #027fe6;
+    background: #ffffff;
+    border: 1px solid #027fe6;
+    border-radius: 50%;
+    margin-right: 8px;
+    &:hover, &:active{
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      background: #027fe6;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  &--btn::before{
+    transition: all ease-in-out 0.15s;
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 0px solid #027fe6;
+    border-radius: 50%;
+    &:hover, &:active{
+      border: 1px solid #ffffff;
+    }
+  }
+  &--btn:focus::before{
+    border: 1px solid #027fe6;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    top: -4px;
+    left: -4px;
+  }
+
+  &--btn::after{
+    content: '?';
+  }
+  &--container{
+    display: block;
+    position: absolute;
+    min-width: 128px;
+    background: #ffffff;
+    border-radius: 10px;
+    bottom: calc(100% + 8px);
+    left: 0px;
+    box-shadow: 1px 1px 10px 1px #8888886e;
+    padding: 16px;
+  }
+  &--container__close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #027fe6;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    &::after {
+      content: 'x';
+      padding: 0 4px;
+    }
+    &:focus {
+      &::after {
+        border: 1px solid #027fe6;
+      }
+      outline: 0;
+    }
+  }
+  &--chevron{
+    display: inline-block;
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 1px 1px 10px 1px #8888886e;
+    width: 16px;
+    height: 16px;
+    left: calc(50% - 8px);
+    bottom: calc(100% + 9px);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    z-index: 1;
+    &::before{
+      content: '';
+      position: relative;
+      display: block;
+      background: #ffffff;
+      border-radius: 10px;
+      width: 16px;
+      height: 35px;
+      top: -4px;
+      left: -6px;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+  }
+}

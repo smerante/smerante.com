@@ -1,8 +1,8 @@
-<button [id]="tooltipId" class="sam-tooltip--btn" (click)="toggleTooltip();" (blur)="closeTooltip();" [attr.aria-label]="tooltipAriaLabel">
-    <span *ngIf="contentOpen" class="sam-tooltip--chevron"></span>
-  </button>
 <label [for]="tooltipId" class="sam-tooltip--label" [innerHtml]="tooltipLabel"></label>
-<div [hidden]="!contentOpen" role="tooltip" aria-live="assertive" class="sam-tooltip--container">
+<button [id]="tooltipId" class="sam-tooltip--btn" (click)="toggleTooltip();" [attr.aria-label]="tooltipAriaLabel">
+  <span *ngIf="contentOpen" class="sam-tooltip--chevron"></span>
+</button>
+<div #tooltipContainer [hidden]="!contentOpen" role="tooltip" aria-live="assertive" class="sam-tooltip--container">
   <span class="sr-only">Tooltip popup</span>
   <ng-content></ng-content>
   <button aria-hidden="true" class="sam-tooltip--container__close" (click)="toggleTooltip();"></button>

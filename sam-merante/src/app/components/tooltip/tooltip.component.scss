@@ -6,8 +6,8 @@
   width: 100%;
   height: 100%;
   padding: 8px 4px;
+  @include base-font();
   &--label{
-    @include base-font();
     display: inline;
     cursor: pointer;
   }
@@ -68,6 +68,7 @@
     left: 0px;
     box-shadow: 1px 1px 10px 1px #8888886e;
     padding: 16px;
+    padding-right: 24px;
   }
   &--container__close{
     position: absolute;

@@ -32,7 +32,7 @@ input.sam-date-input {
   border-radius: 10px;
   &:active, :focus{ 
     outline: none;
-    border: 1px solid #027fe6;
+    background-color: #e6e3e3;
   }
 }
 
@@ -49,7 +49,7 @@ input.sam-date-input {
   cursor: pointer;    
   z-index: 1;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: #e6e3e3;
     border-radius: 10px;
   }
@@ -74,6 +74,9 @@ input.sam-date-input {
     background: #fcfafa;
   }
   &--header__left {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
     @include base-font();
     text-align: center;
     line-height: 2;
@@ -82,11 +85,14 @@ input.sam-date-input {
     color: #027fe6;
     width: 33.3%;
     cursor: pointer;
-    &:hover {
+    &:hover, &:focus {
       background-color: #e6e3e3;
     }
   }
   &--header__right {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
     @include base-font();
     text-align: center;
     line-height: 2;
@@ -95,11 +101,14 @@ input.sam-date-input {
     width: 33.3%;
     color: #027fe6;
     cursor: pointer;
-    &:hover {
+    &:hover, &:focus {
       background-color: #e6e3e3;
     }
   }
   &--header__date {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
     display: inline-block;
     @include base-font();
     text-align: center;
@@ -108,7 +117,7 @@ input.sam-date-input {
     height: 32px;
     cursor: pointer;
     color: #027fe6;
-    &:hover {
+    &:hover, &:focus {
       background-color: #e6e3e3;
     }
   }

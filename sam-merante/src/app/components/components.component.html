@@ -391,20 +391,20 @@
 <sam-documentation>
   <documentation-header>Date Picker</documentation-header>
   <documentation-body>
-    <div class="m-2">
-      <sam-calendar [(date)]="selectedDate"></sam-calendar>
-    </div>
-    <div class="m-1">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
+          <sam-calendar [(date)]="selectedDate"></sam-calendar>
+        </div>
+        <div class="col-sm-6">
           <pre>
-Model: &#123;	
-  Year: {{selectedDate | date: 'yyyy'}}
-  Month: {{selectedDate | date: 'MM'}}
-  Day: {{selectedDate | date: 'dd'}}
-  Date: {{selectedDate | date: 'fullDate'}}
-&#125;	
-        </pre>
+    Model: &#123;	
+      Year: {{selectedDate | date: 'yyyy'}}
+      Month: {{selectedDate | date: 'MM'}}
+      Day: {{selectedDate | date: 'dd'}}
+      Date: {{selectedDate | date: 'fullDate'}}
+    &#125;	
+            </pre>
         </div>
       </div>
     </div>

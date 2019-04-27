@@ -1,6 +1,6 @@
 <span class="sam-date-wrapper">
   <input type="string" class="sam-date-input" 
-    [value]="date | date : 'fullDate'"
+    [value]="selectedDate | date : 'fullDate'"
     (change)="onChange();" (click)="clicked();" />
   <img class="calendar-icon" src="assets/calendar.png" tabindex="0" role="button" (keydown.enter)="clicked();"
     (keydown.space)="clicked();" (click)="clicked();" />
@@ -32,7 +32,7 @@
       class="sam-calendar--week">
       <button 
       *ngFor="let d of getDaysFromWeek(i);"
-      class="sam-calendar--week__d" (click)="selectDate(d);" [attr.selectedDate]="d.getDate() === date.getDate() && d.getMonth() === date.getMonth()" [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}</button>
+      class="sam-calendar--week__d" (click)="selectDate(d);" [attr.selectedDate]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()" [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}</button>
     </div>
   </div>
 </div>

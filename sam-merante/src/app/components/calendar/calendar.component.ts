@@ -8,9 +8,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
 
-  @Input() date: Date = new Date();
+  @Input('date') selectedDate: Date = new Date();
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
 
+  date:  Date = new Date();
   open: boolean = false;
   weeks = []; //5 Weeks per month
   weekDays = [];
@@ -54,7 +55,7 @@ export class CalendarComponent implements OnInit {
   }
 
   onChange() {
-    this.dateChange.emit(this.date);
+    this.dateChange.emit(this.selectedDate);
   }
 
   selectLeft() {
@@ -72,6 +73,7 @@ export class CalendarComponent implements OnInit {
   selectDate(d: Date){
     this.date = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+    this.selectedDate = this.date;
     this.onChange();
   }
   getDaysFromWeek(week: number): any[] {

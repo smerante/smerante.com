@@ -1,0 +1,38 @@
+<span class="sam-date-wrapper">
+  <input type="string" class="sam-date-input" 
+    [value]="date | date : 'fullDate'"
+    (change)="onChange();" (click)="clicked();" />
+  <img class="calendar-icon" src="assets/calendar.png" tabindex="0" role="button" (keydown.enter)="clicked();"
+    (keydown.space)="clicked();" (click)="clicked();" />
+</span>
+<div class="sam-calendar" [attr.open]="open">
+  <div class="sam-calendar--header">
+    <button class="sam-calendar--header__left" tabindex="0" (click)="selectLeft();">
+      &lt;
+    </button>
+    <button class="sam-calendar--header__date">
+      {{ date | date: 'MMM' }}
+    </button>
+    <button class="sam-calendar--header__right" tabindex="0" (click)="selectRight();">
+      &gt;
+    </button>
+  </div>
+  <div class="sam-calendar--header">
+    <span class="sam-calendar--header__day">Sun</span>
+    <span class="sam-calendar--header__day">Mon</span>
+    <span class="sam-calendar--header__day">Tue</span>
+    <span class="sam-calendar--header__day">Wed</span>
+    <span class="sam-calendar--header__day">Thu</span>
+    <span class="sam-calendar--header__day">Fri</span>
+    <span class="sam-calendar--header__day">Sat</span>
+  </div>
+  <div class="sam-calendar--body">
+    <div 
+      *ngFor="let w of weeks; let i = index;" 
+      class="sam-calendar--week">
+      <button 
+      *ngFor="let d of getDaysFromWeek(i);"
+      class="sam-calendar--week__d" (click)="selectDate(d);" [attr.selectedDate]="d.getDate() === date.getDate() && d.getMonth() === date.getMonth()" [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}</button>
+    </div>
+  </div>
+</div>

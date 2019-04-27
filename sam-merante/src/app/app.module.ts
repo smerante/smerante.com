@@ -27,6 +27,7 @@ import { CardsModule } from './components/cards/cards.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalModule } from './components/modal/modal.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { TooltipComponent } from './components/tooltip/tooltip.component';
     RadiosComponent,
     RadioGroupComponent,
     TooltipComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

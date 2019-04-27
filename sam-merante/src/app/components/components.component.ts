@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-components',
@@ -19,6 +16,7 @@ export class ComponentsComponent implements OnInit {
   toggleVal4: boolean = false;
   maleChecked: boolean = false;
   selectedDate: Date = new Date();
+  date: Date = new Date();
 
   constructor() { }
 

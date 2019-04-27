@@ -18,7 +18,7 @@ export class ComponentsComponent implements OnInit {
   toggleVal3: boolean = false;
   toggleVal4: boolean = false;
   maleChecked: boolean = false;
-  selectedDate: any;
+  selectedDate: Date = new Date();
 
   constructor() { }
 

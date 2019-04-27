@@ -1,6 +1,6 @@
 @import '../components.component.scss';
 
-.sam-date{
+.sam-date-input{
   &::-webkit-datetime-edit,
   &::-webkit-datetime-edit-fields-wrapper,
   &::-webkit-datetime-edit-text,
@@ -14,6 +14,7 @@
 }
 
 input.sam-date-input {
+  @include base-font;
   width: calc(100% - 50px);
   height: 100%;
   text-align: center;
@@ -29,6 +30,10 @@ input.sam-date-input {
   display: inline-block;
   border: 1px solid #7a7a7a;
   border-radius: 10px;
+  &:active, :focus{ 
+    outline: none;
+    border: 1px solid #027fe6;
+  }
 }
 
 .calendar-icon {
@@ -60,6 +65,7 @@ input.sam-date-input {
   top: -11px;
   * {
     visibility: hidden;
+    transition: all ease-in-out 0.25s;
   }
   transition: all ease-in-out 0.25s;
   &--header {
@@ -67,13 +73,44 @@ input.sam-date-input {
     height: 64px;
     background: #fcfafa;
   }
-  &--header__date {
+  &--header__left {
     @include base-font();
     text-align: center;
     line-height: 2;
     height: 32px;
+    display: inline-block;
+    color: #027fe6;
+    width: 33.3%;
+    cursor: pointer;
+    &:hover {
+      background-color: #e6e3e3;
+    }
+  }
+  &--header__right {
+    @include base-font();
+    text-align: center;
+    line-height: 2;
+    height: 32px;
+    display: inline-block;
+    width: 33.3%;
+    color: #027fe6;
+    cursor: pointer;
+    &:hover {
+      background-color: #e6e3e3;
+    }
+  }
+  &--header__date {
+    display: inline-block;
+    @include base-font();
+    text-align: center;
+    line-height: 2;
+    width: 33.3%;
+    height: 32px;
     cursor: pointer;
     color: #027fe6;
+    &:hover {
+      background-color: #e6e3e3;
+    }
   }
 }
 

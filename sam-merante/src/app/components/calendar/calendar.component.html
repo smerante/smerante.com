@@ -1,20 +1,18 @@
 <span class="sam-date-wrapper">
-  <input 
-    type="string" 
-    class="sam-date-input" 
-    [(ngModel)]="date"
-    [placeholder]="currentDate | date : 'fullDate'" 
-    (change)="onChange();" 
-    (click)="clicked();"/>
-    <img
-     class="calendar-icon" 
-     src="assets/calendar.png"
-     (click)="clicked();"/>
+  <input type="string" class="sam-date-input" [value]="date | date : 'fullDate'" [value]="selectingDate | date : 'fullDate'"
+    (change)="onChange();" (click)="clicked();" />
+  <img class="calendar-icon" src="assets/calendar.png" (click)="clicked();" />
 </span>
 <div class="sam-calendar" [attr.open]="open">
   <div class="sam-calendar--header">
+    <div class="sam-calendar--header__left" (click)="selectLeft();">
+      &lt;
+    </div>
     <div class="sam-calendar--header__date">
-        {{ selectingDate | date: 'MMM' }}
+      {{ date | date: 'MMM' }}
+    </div>
+    <div class="sam-calendar--header__right" (click)="selectRight();">
+        &gt;
     </div>
   </div>
 </div>

@@ -3,32 +3,35 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'sam-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
+  host: {'class': 'sam-calendar-component'}
 })
 export class CalendarComponent implements OnInit {
 
-  @Input() date: any;
+  @Input() date: Date = new Date();
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
 
   open: boolean = false;
-  currentDate = new Date();
+  
   selectingDate = new Date();
 
   constructor() { }
 
   ngOnInit() {
+    let firstDay = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
+    let lastDay = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0);
+    console.log(this.date + " : " + firstDay + " : " + lastDay);
   }
 
   clicked() {
     this.open = !this.open;
-    let firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
-    let lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
-    console.log(this.currentDate + " : " + firstDay + " : " + lastDay);
 
   }
+
   onChange() {
     this.dateChange.emit(this.date);
   }
+
   // submit() {
   //   if (this.date) {
   //     console.log(this.date);
@@ -39,4 +42,13 @@ export class CalendarComponent implements OnInit {
   //     console.log(selectedDate.getDay() + ', ' + selectedDate.getMonth + ' ' + selectedDate.getDate() + ', ' + selectedDate.getFullYear());
   //   }
   // }
+  selectLeft() {
+    this.date = new Date(this.date.getFullYear() , this.date.getMonth() - 1, this.date.getDate());
+    this.onChange();
+  }
+
+  selectRight() {
+    this.date = new Date(this.date.getFullYear() , this.date.getMonth() + 1, this.date.getDate());
+    this.onChange();
+  }
 }

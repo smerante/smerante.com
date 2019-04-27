@@ -1,0 +1,68 @@
+@import '../components.component.scss';
+
+.sam-date{
+  &::-webkit-datetime-edit,
+  &::-webkit-datetime-edit-fields-wrapper,
+  &::-webkit-datetime-edit-text,
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field,
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
+
+.sam-date-input {
+  width: calc(100% - 50px);
+  height: 100%;
+  text-align: center;
+  border: none;
+}
+
+.sam-date-wrapper {
+  @include base-font();
+  width: 280px;
+  height: 48px;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #7a7a7a;
+  border-right: none;
+}
+
+.calendar-icon {
+  display: inline-block;
+  box-sizing: content-box;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  left: 3px;
+  top: -2px;
+  border-right: 1px solid #7a7a7a;
+  border-radius: 4px;
+  cursor: pointer;
+  border-left: 0px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e6e3e3;
+    border-top: 1px solid #7a7a7a;
+    border-bottom: 1px solid #7a7a7a;
+    height: 46px;
+  }
+}
+.sam-calendar {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  border: 1px solid #7a7a7a;
+  border-radius: 10px;
+  margin-top: 4px;
+  transition: all ease-in-out 0.25s;
+}
+.sam-calendar[open="true"] {
+  visibility: visible;
+  display: block;
+  width: 284px;
+  height: 280px;
+}

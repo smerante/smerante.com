@@ -1,0 +1,16 @@
+<span class="sam-date-wrapper">
+  <input 
+    type="string" 
+    class="sam-date-input" 
+    [(ngModel)]="date"
+    [placeholder]="currentDate | date : 'fullDate'" 
+    (change)="onChange();" 
+    (click)="clicked();"/>
+    <img
+     class="calendar-icon" 
+     src="assets/calendar.png"
+     (click)="clicked();"/>
+</span>
+<div class="sam-calendar" [attr.open]="open">
+  test
+</div>

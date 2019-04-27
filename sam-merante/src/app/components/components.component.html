@@ -165,25 +165,26 @@
 </sam-documentation>
 
 <sam-documentation>
-    <documentation-header>Tooltips</documentation-header>
-    <documentation-body>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-6 text-center">
-            <sam-tooltip tooltipLabel="Default tooltip" tooltipAriaLabel="This is a default tooltip">
-                Lorem ipsum dolor sit amet
-            </sam-tooltip>
-          </div>
-          <div class="col-sm-6 text-center">
-            <sam-tooltip tooltipAriaLabel="This is a tooltip with a long wrapping label" tooltipLabel="Super long long long long long long wrapping label">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-            </sam-tooltip>
-          </div>
+  <documentation-header>Tooltips</documentation-header>
+  <documentation-body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 text-center">
+          <sam-tooltip tooltipLabel="Default tooltip" tooltipAriaLabel="This is a default tooltip">
+            Lorem ipsum dolor sit amet
+          </sam-tooltip>
+        </div>
+        <div class="col-sm-6 text-center">
+          <sam-tooltip tooltipAriaLabel="This is a tooltip with a long wrapping label"
+            tooltipLabel="Super long long long long long long wrapping label">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+          </sam-tooltip>
         </div>
       </div>
-    </documentation-body>
-  </sam-documentation>
+    </div>
+  </documentation-body>
+</sam-documentation>
 
 <sam-documentation>
   <documentation-header>Modal Windows</documentation-header>
@@ -382,6 +383,29 @@
             <a class="card-link" target="_blank" href="https://www.linkedin.com/in/sam-merante/">Linked In</a>
           </card-footer>
         </sam-card>
+      </div>
+    </div>
+  </documentation-body>
+</sam-documentation>
+
+<sam-documentation>
+  <documentation-header>Calendar</documentation-header>
+  <documentation-body>
+    <div class="container-fluid m-4">
+      <sam-calendar [(date)]="selectedDate"></sam-calendar>
+    </div>
+    <div class="container-fluid m-4">
+      <div class="row">
+        <div class="col-sm-12">
+          <pre>
+Model: &#123;	
+  Year: {{selectedDate | date: 'yyyy'}}
+  Month: {{selectedDate | date: 'MM'}}
+  Day: {{selectedDate | date: 'dd'}}
+  Date: {{selectedDate | date: 'fullDate'}}
+&#125;	
+        </pre>
+        </div>
       </div>
     </div>
   </documentation-body>

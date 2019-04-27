@@ -32,7 +32,7 @@
       class="sam-calendar--week">
       <button 
       *ngFor="let d of getDaysFromWeek(i);"
-      class="sam-calendar--week__d" [disabled]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}</button>
+      class="sam-calendar--week__d" (click)="selectDate(d);" [attr.selectedDate]="d.getDate() === date.getDate() && d.getMonth() === date.getMonth()" [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}</button>
     </div>
   </div>
 </div>

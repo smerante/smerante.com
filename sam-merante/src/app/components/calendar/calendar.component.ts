@@ -69,6 +69,11 @@ export class CalendarComponent implements OnInit {
     this.onChange();
   }
 
+  selectDate(d: Date){
+    this.date = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+    this.onChange();
+  }
   getDaysFromWeek(week: number): any[] {
     return this.weekDays[week];
   }

@@ -1,0 +1,185 @@
+@import '../components.component.scss';
+
+.sam-date-input{
+  &::-webkit-datetime-edit,
+  &::-webkit-datetime-edit-fields-wrapper,
+  &::-webkit-datetime-edit-text,
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field,
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
+
+input.sam-date-input {
+  @include base-font;
+  width: calc(100% - 50px);
+  height: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sam-date-wrapper {
+  @include base-font();
+  width: 280px;
+  height: 48px;
+  display: inline-block;
+  border: 1px solid #7a7a7a;
+  border-radius: 10px;
+  &:active, :focus{ 
+    outline: none;
+    background-color: #e6e3e3;
+  }
+}
+
+.calendar-icon {
+  display: inline-block;
+  box-sizing: content-box;
+  position: relative;
+  width: 48px;
+  height: 46px;
+  left: 2px;
+  top: -2px;
+  cursor: pointer;
+  border-left: 0px;
+  cursor: pointer;    
+  z-index: 1;
+  background: white;
+  border-radius: 10px;
+
+  &:hover, &:focus {
+    background-color: #e6e3e3;
+    border-radius: 10px;
+  }
+}
+.sam-calendar {
+  position: relative;
+  visibility: hidden;
+  width: 280px;
+  max-height: 0px;
+  border: 1px solid #7a7a7a;
+  border-radius: 10px;
+  padding-top: 48px;
+  top: -48px;
+  transition: all ease-in-out 0.25s;
+  * {
+    visibility: hidden;
+  }
+  transition: all ease-in-out 0.25s;
+  &--header {
+    width: 100%;
+    height: 32px;
+    background: #fcfafa;
+    border-radius: 10px;
+  }
+  &--header__day{
+    @include base-font();
+    display: inline-block;
+    text-align: center;
+    width: 14.285%;
+  }
+  &--header__left {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    @include base-font();
+    text-align: center;
+    line-height: 2;
+    height: 32px;
+    display: inline-block;
+    color: #027fe6;
+    width: 33.3%;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.25s;
+    &:hover, &:focus {
+      background-color: #e6e3e3;
+    }
+  }
+  &--header__right {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    @include base-font();
+    text-align: center;
+    line-height: 2;
+    height: 32px;
+    display: inline-block;
+    width: 33.3%;
+    color: #027fe6;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.25s;
+    &:hover, &:focus {
+      background-color: #e6e3e3;
+    }
+  }
+  &--header__date {
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    display: inline-block;
+    @include base-font();
+    text-align: center;
+    line-height: 2;
+    width: 33.3%;
+    height: 32px;
+    cursor: pointer;
+    color: #027fe6;
+    transition: background-color ease-in-out 0.25s;
+    &:hover, &:focus {
+      background-color: #e6e3e3;
+    }
+  }
+  &--body {
+    display: block;
+    width: 100%;
+  }
+  &--week {
+    display: block;
+    width: 100%;
+    height: 42px;
+    &__d {
+      border: 0px;
+      outline: 0px;
+      padding: 0;
+      background-color: transparent;
+      @include base-font();
+      line-height: 2.5;
+      display: inline-block;
+      width: 14.28%;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color ease-in-out 0.25s;
+      &:hover, &:focus{
+        background-color: #e6e3e3;
+      }
+      &[selectedDate="true"] {
+        background-color: #027fe6;
+        color: #ffffff;
+      }
+      &[notInMonth="true"] {
+        color: #e6e3e3;
+        &:hover, &:focus {
+          background-color: #e6e3e3;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.sam-calendar[open="true"] {
+  visibility: visible;
+  display: block;
+  max-height: 364px;
+  * {
+    visibility: visible;
+    * {
+      visibility: visible;
+    }
+  }
+}

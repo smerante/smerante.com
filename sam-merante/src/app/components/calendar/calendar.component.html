@@ -1,6 +1,6 @@
 <span class="sam-date-wrapper">
   <input type="string" class="sam-date-input" 
-    [value]="selectedDate | date : 'fullDate'"
+    [value]="selectedDate | date : 'EEE, MMM dd, yyyy'"
     (change)="onChange();" (click)="clicked();" />
   <img class="calendar-icon" src="assets/calendar.png" tabindex="0" role="button" (keydown.enter)="clicked();"
     (keydown.space)="clicked();" (click)="clicked();" />

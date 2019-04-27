@@ -12,6 +12,7 @@ export class CalendarComponent implements OnInit {
 
   open: boolean = false;
   currentDate = new Date();
+  selectingDate = new Date();
 
   constructor() { }
 
@@ -20,7 +21,10 @@ export class CalendarComponent implements OnInit {
 
   clicked() {
     this.open = !this.open;
-    console.log(this.currentDate);
+    let firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
+    let lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
+    console.log(this.currentDate + " : " + firstDay + " : " + lastDay);
+
   }
   onChange() {
     this.dateChange.emit(this.date);

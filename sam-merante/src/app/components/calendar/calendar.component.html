@@ -12,5 +12,9 @@
      (click)="clicked();"/>
 </span>
 <div class="sam-calendar" [attr.open]="open">
-  test
+  <div class="sam-calendar--header">
+    <div class="sam-calendar--header__date">
+        {{ selectingDate | date: 'MMM' }}
+    </div>
+  </div>
 </div>

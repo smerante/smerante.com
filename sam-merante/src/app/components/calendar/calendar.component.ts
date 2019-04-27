@@ -4,7 +4,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   selector: 'sam-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  host: {'class': 'sam-calendar-component'}
+  host: { 'class': 'sam-calendar-component' }
 })
 export class CalendarComponent implements OnInit {
 
@@ -12,15 +12,40 @@ export class CalendarComponent implements OnInit {
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
 
   open: boolean = false;
-  
-  selectingDate = new Date();
-
+  weeks = []; //5 Weeks per month
+  weekDays = [];
   constructor() { }
 
   ngOnInit() {
-    let firstDay = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
-    let lastDay = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0);
-    console.log(this.date + " : " + firstDay + " : " + lastDay);
+    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+  }
+
+  getWeeksInMonth(month, year) {
+    this.weeks = [];
+    let firstDate = new Date(year, month, 1),
+      lastDate = new Date(year, month + 1, 0),
+      numDays = lastDate.getDate();
+    let weekNum = 0;
+    let start = 0;
+    let end = 7 - firstDate.getDay();
+    while (start <= numDays) {
+      let week = [];
+      for (let i = 0; i < 7; i++) {
+        let day: Date = new Date(this.date.getFullYear(), this.date.getMonth(), (start + i));
+
+        if (weekNum == 0) {
+          day = new Date(this.date.getFullYear(), this.date.getMonth(), (start + i) - (firstDate.getDay() - 1));
+        }
+        week.push(day);
+      }
+      this.weeks.push(week);
+      start = end + 1;
+      end = end + 7;
+      if (end > numDays)
+        end = numDays;
+      weekNum++;
+    }
+    return this.weeks;
   }
 
   clicked() {
@@ -32,23 +57,19 @@ export class CalendarComponent implements OnInit {
     this.dateChange.emit(this.date);
   }
 
-  // submit() {
-  //   if (this.date) {
-  //     console.log(this.date);
-  //     let dates = this.date.split('-');
-  //     console.log(dates[0], (dates[1] - 1), dates[2]);
-  //     let selectedDate = new Date(dates[0], (dates[1] - 1), dates[2]);
-  //     console.log(selectedDate);
-  //     console.log(selectedDate.getDay() + ', ' + selectedDate.getMonth + ' ' + selectedDate.getDate() + ', ' + selectedDate.getFullYear());
-  //   }
-  // }
   selectLeft() {
-    this.date = new Date(this.date.getFullYear() , this.date.getMonth() - 1, this.date.getDate());
+    this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, this.date.getDate());
+    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
     this.onChange();
   }
 
   selectRight() {
-    this.date = new Date(this.date.getFullYear() , this.date.getMonth() + 1, this.date.getDate());
+    this.date = new Date(this.date.getFullYear(), this.date.getMonth() + 1, this.date.getDate());
+    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
     this.onChange();
+  }
+
+  getDaysFromWeek(week: number): any[] {
+    return this.weekDays[week];
   }
 }

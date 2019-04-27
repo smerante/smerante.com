@@ -58,20 +58,26 @@ input.sam-date-input {
   position: relative;
   visibility: hidden;
   width: 280px;
-  height: 0px;
+  max-height: 0px;
   border: 1px solid #7a7a7a;
   border-top: 0px;
   padding-top: 4px;
   top: -11px;
   * {
     visibility: hidden;
-    transition: all ease-in-out 0.25s;
   }
   transition: all ease-in-out 0.25s;
   &--header {
     width: 100%;
-    height: 64px;
+    height: 32px;
     background: #fcfafa;
+  }
+  &--header__day{
+    @include base-font();
+    display: inline-block;
+    text-align: center;
+    width: 14.285%;
+    transition: all ease-in-out 0.25s;
   }
   &--header__left {
     border: 0px;
@@ -85,6 +91,7 @@ input.sam-date-input {
     color: #027fe6;
     width: 33.3%;
     cursor: pointer;
+    transition: all ease-in-out 0.25s;
     &:hover, &:focus {
       background-color: #e6e3e3;
     }
@@ -101,6 +108,7 @@ input.sam-date-input {
     width: 33.3%;
     color: #027fe6;
     cursor: pointer;
+    transition: all ease-in-out 0.25s;
     &:hover, &:focus {
       background-color: #e6e3e3;
     }
@@ -121,12 +129,45 @@ input.sam-date-input {
       background-color: #e6e3e3;
     }
   }
+  &--body {
+    display: block;
+    width: 100%;
+  }
+  &--week {
+    display: block;
+    width: 100%;
+    height: 42px;
+    &__d {
+      border: 0px;
+      outline: 0px;
+      padding: 0;
+      background-color: transparent;
+      @include base-font();
+      line-height: 2.5;
+      display: inline-block;
+      width: 14.28%;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: all ease-in-out 0.25s;
+      &:hover, &:focus{
+        background-color: #e6e3e3;
+      }
+      &:disabled {
+        color: #e6e3e3;
+        cursor: not-allowed;
+        &:hover, &:focus {
+          background-color: unset;
+        }
+      }
+    }
+  }
 }
 
 .sam-calendar[open="true"] {
   visibility: visible;
   display: block;
-  height: 280px;
+  max-height: 316px;
   * {
     visibility: visible;
   }

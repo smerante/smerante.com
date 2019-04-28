@@ -1,5 +1,11 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
+enum DateView {
+  days = 0,
+  months = 1,
+  years = 2
+}
+
 @Component({
   selector: 'sam-calendar',
   templateUrl: './calendar.component.html',
@@ -11,14 +17,35 @@ export class CalendarComponent implements OnInit {
   @Input('date') selectedDate: Date = new Date();
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
 
-  date:  Date = new Date();
+  date: Date = new Date();
   open: boolean = false;
-  weeks = []; //5 Weeks per month
+  weeks = [];
   weekDays = [];
+  years = [];
+  months = [];
+  view: DateView = DateView.days;
   constructor() { }
 
   ngOnInit() {
     this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+    this.initYears(this.date);
+    this.initMonths(this.date);
+  }
+
+  initYears(start: Date) {
+    this.years = [];
+    let year = -6;
+    for (let i = 0; i < 12; i++) {
+      this.years.push(new Date(start.getFullYear() + year, 0, 1));
+      year++;
+    }
+  }
+
+  initMonths(year: Date) {
+    this.months = [];
+    for (let i = 0; i < 12; i++) {
+      this.months.push(new Date(year.getFullYear(), i, 1));
+    }
   }
 
   getWeeksInMonth(month, year) {
@@ -59,24 +86,63 @@ export class CalendarComponent implements OnInit {
   }
 
   selectLeft() {
-    this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, this.date.getDate());
-    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
-    this.onChange();
+    if (this.view === DateView.days) {
+      this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, this.date.getDate());
+      this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+      this.onChange();
+    }
+    else if (this.view === DateView.months) {
+      this.date = new Date(this.date.getFullYear() - 1, 0, 1)
+      this.initMonths(this.date);
+    }
+    else if (this.view === DateView.years) {
+      this.date = new Date(this.date.getFullYear() - 7, 0, 1)
+      this.initYears(this.date);
+    }
   }
 
   selectRight() {
-    this.date = new Date(this.date.getFullYear(), this.date.getMonth() + 1, this.date.getDate());
-    this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
-    this.onChange();
+    if (this.view === DateView.days) {
+      this.date = new Date(this.date.getFullYear(), this.date.getMonth() + 1, this.date.getDate());
+      this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
+      this.onChange();
+    }
+    else if (this.view === DateView.months) {
+      this.date = new Date(this.date.getFullYear() + 1, 0, 1)
+      this.onChange();
+    }
+    else if (this.view === DateView.years) {
+      this.date = new Date(this.date.getFullYear() + 7, 0, 1)
+      this.initYears(this.date);
+    }
   }
 
-  selectDate(d: Date){
+  selectDate(d: Date) {
     this.date = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
-    this.selectedDate = this.date;
-    this.onChange();
+    this.initYears(this.date);
+    this.initMonths(this.date);
+    if (this.view === DateView.months) {
+      this.view = DateView.days;
+    } else if (this.view === DateView.years) {
+      this.view = DateView.months;
+    }
+    else {
+      this.selectedDate = this.date;
+      this.onChange();
+      this.open = false;
+    }
   }
+
   getDaysFromWeek(week: number): any[] {
     return this.weekDays[week];
+  }
+
+  changeView() {
+    if (this.view === DateView.days) {
+      this.view = DateView.months;
+    } else if (this.view === DateView.months) {
+      this.view = DateView.years;
+    }
   }
 }

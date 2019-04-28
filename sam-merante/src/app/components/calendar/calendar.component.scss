@@ -85,6 +85,7 @@ input.sam-date-input {
   &--header__left {
     border: 0px;
     outline: 0px;
+    padding: 0px;
     background-color: transparent;
     @include base-font();
     text-align: center;
@@ -92,7 +93,7 @@ input.sam-date-input {
     height: 32px;
     display: inline-block;
     color: #027fe6;
-    width: 33.3%;
+    width: 28%;
     cursor: pointer;
     transition: background-color ease-in-out 0.25s;
     &:hover, &:focus {
@@ -102,13 +103,14 @@ input.sam-date-input {
   &--header__right {
     border: 0px;
     outline: 0px;
+    padding: 0px;
     background-color: transparent;
     @include base-font();
     text-align: center;
     line-height: 2;
     height: 32px;
     display: inline-block;
-    width: 33.3%;
+    width: 28%;
     color: #027fe6;
     cursor: pointer;
     transition: background-color ease-in-out 0.25s;
@@ -119,12 +121,13 @@ input.sam-date-input {
   &--header__date {
     border: 0px;
     outline: 0px;
+    padding: 0px;
     background-color: transparent;
     display: inline-block;
     @include base-font();
     text-align: center;
     line-height: 2;
-    width: 33.3%;
+    width: 44%;
     height: 32px;
     cursor: pointer;
     color: #027fe6;
@@ -141,6 +144,46 @@ input.sam-date-input {
     display: block;
     width: 100%;
     height: 42px;
+    &__y {
+      border: 0px;
+      outline: 0px;
+      padding: 0;
+      background-color: transparent;
+      @include base-font();
+      line-height: 3.5;
+      height: 84px;
+      width: 25%;
+      cursor: pointer;
+      &:hover, &:focus{
+        background-color: #e6e3e3;
+        border-radius: 8px;
+      }
+      &[selectedDate="true"] {
+        background-color: #027fe6;
+        color: #ffffff;
+        border-radius: 8px;
+      }
+    }
+    &__m {
+      border: 0px;
+      outline: 0px;
+      padding: 0;
+      background-color: transparent;
+      @include base-font();
+      line-height: 3.5;
+      height: 84px;
+      width: 25%;
+      cursor: pointer;
+      &:hover, &:focus{
+        background-color: #e6e3e3;
+        border-radius: 8px;
+      }
+      &[selectedDate="true"] {
+        background-color: #027fe6;
+        color: #ffffff;
+        border-radius: 8px;
+      }
+    }
     &__d {
       border: 0px;
       outline: 0px;
@@ -172,6 +215,7 @@ input.sam-date-input {
       &[notInMonth="true"][selectedDate="true"] {
         background-color: #027fe66c;
         color: #ffffff;
+        border-radius: 8px;
       }
     }
   }

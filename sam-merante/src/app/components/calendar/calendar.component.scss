@@ -1,5 +1,8 @@
 @import '../components.component.scss';
 
+.sam-calendar-component {
+  position: relative;
+}
 .sam-date-input{
   &::-webkit-datetime-edit,
   &::-webkit-datetime-edit-fields-wrapper,
@@ -21,6 +24,8 @@ input.sam-date-input {
   border: none;
   cursor: pointer;
   border-radius: 10px;
+  z-index: 2;
+  position: absolute;
 }
 
 .sam-date-wrapper {
@@ -30,6 +35,7 @@ input.sam-date-input {
   display: inline-block;
   border: 1px solid #7a7a7a;
   border-radius: 10px;
+  position: relative;
   &:active, :focus{ 
     outline: none;
     background-color: #e6e3e3;
@@ -42,14 +48,13 @@ input.sam-date-input {
   position: relative;
   width: 46px;
   height: 44px;
-  left: 3px;
-  top: -2px;
   cursor: pointer;
   border-left: 0px;
   cursor: pointer;    
-  z-index: 1;
+  z-index: 2;
   background: white;
   border-radius: 10px;
+  float: right;
 
   &:hover, &:focus {
     background-color: #e6e3e3;
@@ -57,14 +62,16 @@ input.sam-date-input {
   }
 }
 .sam-calendar {
-  position: relative;
+  position: absolute;
   visibility: hidden;
   width: 280px;
   max-height: 0px;
   border: 1px solid #7a7a7a;
   border-radius: 10px;
   padding-top: 48px;
-  top: -48px;
+  top: 8px;
+  background-color: #ffffff;
+  z-index: 1;
   transition: all ease-in-out 0.25s;
   * {
     visibility: hidden;
@@ -163,6 +170,12 @@ input.sam-date-input {
         color: #ffffff;
         border-radius: 8px;
       }
+      &[selectedDate="true"]:focus {
+        background-color: #024175;
+      }
+      &:focus {
+        border: 1px solid #001b31;
+      }
     }
     &__m {
       border: 0px;
@@ -182,6 +195,12 @@ input.sam-date-input {
         background-color: #027fe6;
         color: #ffffff;
         border-radius: 8px;
+      }
+      &[selectedDate="true"]:focus {
+        background-color: #024175;
+      }
+      &:focus {
+        border: 1px solid #001b31;
       }
     }
     &__d {
@@ -204,6 +223,12 @@ input.sam-date-input {
       &[selectedDate="true"] {
         background-color: #027fe6;
         color: #ffffff;
+      }
+      &[selectedDate="true"]:focus {
+        background-color: #024175;
+      }
+      &:focus {
+        border: 1px solid #001b31;
       }
       &[notInMonth="true"] {
         color: #e6e3e3;

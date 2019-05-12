@@ -18,6 +18,7 @@ export class CalendarComponent implements OnInit {
   @Output() dateChange: EventEmitter<any> = new EventEmitter();
 
   date: Date = new Date();
+  lastSelectedDate: Date;
   open: boolean = false;
   weeks = [];
   weekDays = [];
@@ -30,6 +31,7 @@ export class CalendarComponent implements OnInit {
     this.weekDays = this.getWeeksInMonth(this.date.getMonth(), this.date.getFullYear());
     this.initYears(this.date);
     this.initMonths(this.date);
+    this.lastSelectedDate = this.date;
   }
 
   initYears(start: Date) {
@@ -143,6 +145,52 @@ export class CalendarComponent implements OnInit {
       this.view = DateView.months;
     } else if (this.view === DateView.months) {
       this.view = DateView.years;
+    }
+  }
+
+  wasLastSelected(d: Date) {
+    return d.getDate() === this.lastSelectedDate.getDate() && d.getMonth() === this.lastSelectedDate.getMonth();
+  }
+
+  onKeyDown($event: KeyboardEvent, date: Date) {
+    let newFocusedId: Date;
+    switch ($event.key) {
+      case 'ArrowDown':
+      case 'Down':
+        $event.preventDefault();
+        newFocusedId = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
+        break;
+      case 'ArrowUp':
+      case 'Up':
+        $event.preventDefault();
+        newFocusedId = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
+        break;
+      case 'ArrowLeft':
+      case 'Left':
+        $event.preventDefault();
+        newFocusedId = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1);
+        break;
+      case 'ArrowRight':
+      case 'Right':
+        $event.preventDefault();
+        newFocusedId = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        break;
+    }
+
+    if (newFocusedId && document.getElementById('' + newFocusedId)) {
+      document.getElementById('' + newFocusedId).focus();
+      this.lastSelectedDate = newFocusedId;
+    }
+    else if (newFocusedId) {
+      if (newFocusedId < this.date) {
+        this.selectLeft();
+      } else {
+        this.selectRight();
+      }
+      setTimeout(() => {
+        this.lastSelectedDate = newFocusedId;
+        document.getElementById('' + newFocusedId).focus();
+      }, 0);
     }
   }
 }

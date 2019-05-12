@@ -2,19 +2,25 @@
   <input type="string" class="sam-date-input" [value]="selectedDate | date : 'EEE, MMM dd, yyyy'" (change)="onChange();"
     (click)="clicked();" />
   <img class="calendar-icon" src="assets/calendar.png" tabindex="0" role="button" (keydown.enter)="clicked();"
-    (keydown.space)="clicked();" (click)="clicked();" />
+    (keydown.space)="clicked();" (click)="clicked();"
+    aria-label="Open calendar"
+    role="checkbox"
+    [attr.aria-checked]="open" />
 </span>
 <div class="sam-calendar" [attr.open]="open">
   <div class="sam-calendar--header">
-    <button class="sam-calendar--header__left" tabindex="0" (click)="selectLeft();">
+    <button id="navigateLeft" class="sam-calendar--header__left" tabindex="0" aria-describedby="navigateLeft dateView" (click)="selectLeft();" >
+        <span class="sr-only">Navigate left button</span>
       &lt;
     </button>
-    <button class="sam-calendar--header__date" (click)="changeView();">
-      <span *ngIf="view == 0">{{ date | date: 'MMM' }}</span>
-      <span *ngIf="view == 1">{{ date | date: 'yyyy' }}</span>
-      <span *ngIf="view == 2">{{years[0] | date: 'yyyy'}} - {{years[11] | date: 'yyyy'}}</span>
+    <button id="datePickerView" aria-describedby="dateView datePickerView" class="sam-calendar--header__date" (click)="changeView();">
+      <span class="sr-only">Click to change the calendar view</span>
+      <span id="dateView" *ngIf="view == 0">{{ date | date: 'MMM' }}</span>
+      <span id="dateView" *ngIf="view == 1">{{ date | date: 'yyyy' }}</span>
+      <span id="dateView" *ngIf="view == 2">{{years[0] | date: 'yyyy'}} - {{years[11] | date: 'yyyy'}}</span>
     </button>
-    <button class="sam-calendar--header__right" tabindex="0" (click)="selectRight();">
+    <button id="navigateRight" class="sam-calendar--header__right" aria-describedby="dateView navigateRight" tabindex="0" (click)="selectRight();" >
+        <span class="sr-only">Navigate right button</span>
       &gt;
     </button>
   </div>
@@ -30,19 +36,27 @@
   <div *ngIf="view == 0" class="sam-calendar--body">
     <div *ngFor="let w of weeks; let i = index;" class="sam-calendar--week">
       <button *ngFor="let d of getDaysFromWeek(i);" class="sam-calendar--week__d" (click)="selectDate(d);"
+        [id]="d"
+        (keydown)="onKeyDown($event, d)"
+        [tabindex]="wasLastSelected(d) ? 0 : -1"
         [attr.selectedDate]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()"
-        [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}
+        [attr.notInMonth]="d.getMonth() !== date.getMonth()"
+        [attr.aria-label]="d | date: 'fullDate'"
+        role="checkbox"
+        [attr.aria-checked]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()">{{d | date: 'dd'}}
       </button>
     </div>
   </div>
   <div *ngIf="view == 1" class="sam-calendar--body">
     <button *ngFor="let d of months" class="sam-calendar--week__m" (click)="selectDate(d);"
-      [attr.selectedDate]="d.getMonth() === selectedDate.getMonth() && d.getFullYear() === selectedDate.getFullYear()">{{d | date: 'MMM'}}
+      [attr.selectedDate]="d.getMonth() === selectedDate.getMonth() && d.getFullYear() === selectedDate.getFullYear()"
+      [attr.aria-label]="d | date: 'fullDate'">{{d | date: 'MMM'}}
     </button>
   </div>
   <div *ngIf="view == 2" class="sam-calendar--body">
     <button *ngFor="let d of years" class="sam-calendar--week__y" (click)="selectDate(d);"
-      [attr.selectedDate]="d.getFullYear() === selectedDate.getFullYear()">{{d | date: 'yyyy'}}
+      [attr.selectedDate]="d.getFullYear() === selectedDate.getFullYear()"
+      [attr.aria-label]="d | date: 'fullDate'">{{d | date: 'yyyy'}}
     </button>
   </div>
 </div>

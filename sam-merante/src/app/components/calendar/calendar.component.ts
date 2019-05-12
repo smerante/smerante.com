@@ -134,6 +134,10 @@ export class CalendarComponent implements OnInit {
       this.onChange();
       this.open = false;
     }
+    this.lastSelectedDate = this.date;
+    setTimeout(() => {
+      document.getElementById('' + this.lastSelectedDate).focus();
+    }, 0);
   }
 
   getDaysFromWeek(week: number): any[] {

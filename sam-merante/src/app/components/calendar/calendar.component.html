@@ -39,16 +39,17 @@
         [id]="d"
         (keydown)="onKeyDown($event, d)"
         [tabindex]="wasLastSelected(d) ? 0 : -1"
-        [attr.selectedDate]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()"
-        [attr.notInMonth]="d.getMonth() !== date.getMonth()"
-        [attr.aria-label]="d | date: 'fullDate'"
+        [attr.aria-checked]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()"
         role="checkbox"
-        [attr.aria-checked]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()">{{d | date: 'dd'}}
+        [attr.selectedDate]="d.getDate() === selectedDate.getDate() && d.getMonth() === selectedDate.getMonth()"
+        [attr.aria-label]="d | date: 'fullDate'"
+        [attr.notInMonth]="d.getMonth() !== date.getMonth()">{{d | date: 'dd'}}
       </button>
     </div>
   </div>
   <div *ngIf="view == 1" class="sam-calendar--body">
-    <button *ngFor="let d of months" class="sam-calendar--week__m" (click)="selectDate(d);"
+    <button [id]="d" *ngFor="let d of months" class="sam-calendar--week__m" (click)="selectDate(d);"
+      [attr.aria-checked]="d.getMonth() === selectedDate.getMonth() && d.getFullYear() === selectedDate.getFullYear()"
       [attr.selectedDate]="d.getMonth() === selectedDate.getMonth() && d.getFullYear() === selectedDate.getFullYear()"
       [attr.aria-label]="d | date: 'fullDate'">{{d | date: 'MMM'}}
     </button>

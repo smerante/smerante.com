@@ -7,12 +7,12 @@ enum DateView {
 }
 
 @Component({
-  selector: 'sam-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss'],
-  host: { 'class': 'sam-calendar-component' }
+  selector: 'sam-datepicker',
+  templateUrl: './datepicker.component.html',
+  styleUrls: ['./datepicker.component.scss'],
+  host: { 'class': 'sam-datepicker-component' }
 })
-export class CalendarComponent implements OnInit {
+export class DatePickerComponent implements OnInit {
 
   @Input('date') selectedDate: Date = new Date();
   @Output() dateChange: EventEmitter<any> = new EventEmitter();

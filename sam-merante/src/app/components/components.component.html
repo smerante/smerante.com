@@ -393,8 +393,13 @@
   <documentation-body>
     <div class="container-fluid">
       <div class="row">
+        <div class="col-sm-12">
+          <h2>Standard datepicker</h2>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm-6">
-          <sam-calendar [(date)]="selectedDate"></sam-calendar>
+          <sam-datepicker [(date)]="selectedDate"></sam-datepicker>
         </div>
         <div class="col-sm-6">
           <pre>
@@ -405,6 +410,36 @@
       Date: {{selectedDate | date: 'fullDate'}}
     &#125;	
             </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Range datepicker</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <pre>
+      Model: &#123;	
+      From:
+        Year: {{selectedFromDate | date: 'yyyy'}}
+        Month: {{selectedFromDate | date: 'MM'}}
+        Day: {{selectedFromDate | date: 'dd'}}
+        Date: {{selectedFromDate | date: 'fullDate'}}
+
+      To:
+        Year: {{selectedToDate | date: 'yyyy'}}
+        Month: {{selectedToDate | date: 'MM'}}
+        Day: {{selectedToDate | date: 'dd'}}
+        Date: {{selectedToDate | date: 'fullDate'}}
+      &#125;	
+              </pre>
+        </div>
+        <div class="col-sm-6">
+          <sam-datepicker-range [(fromDate)]="selectedFromDate" [(toDate)]="selectedToDate" ></sam-datepicker-range>
         </div>
       </div>
     </div>

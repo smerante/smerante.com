@@ -27,7 +27,8 @@ import { CardsModule } from './components/cards/cards.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalModule } from './components/modal/modal.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { DatePickerComponent } from './components/datepicker/datepicker.component';
+import { DatePickerRangeComponent } from './components/datepicker/datepicker-range.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     RadiosComponent,
     RadioGroupComponent,
     TooltipComponent,
-    CalendarComponent,
+    DatePickerComponent,
+    DatePickerRangeComponent
   ],
   imports: [
     BrowserModule,

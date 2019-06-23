@@ -1,6 +1,6 @@
 @import '../components.component.scss';
 
-.sam-calendar-component {
+.sam-datepicker-component {
   position: relative;
 }
 .sam-date-input{
@@ -11,7 +11,7 @@
   &::-webkit-datetime-edit-day-field,
   &::-webkit-datetime-edit-year-field,
   &::-webkit-inner-spin-button,
-  &::-webkit-calendar-picker-indicator {
+  &::-webkit-datepicker-picker-indicator {
     display: none;
   }
 }
@@ -42,7 +42,7 @@ input.sam-date-input {
   }
 }
 
-.calendar-icon {
+.datepicker-icon {
   display: inline-block;
   box-sizing: content-box;
   position: relative;
@@ -61,7 +61,7 @@ input.sam-date-input {
     border-radius: 10px;
   }
 }
-.sam-calendar {
+.sam-datepicker {
   position: absolute;
   visibility: hidden;
   width: 280px;
@@ -220,6 +220,11 @@ input.sam-date-input {
       &:hover, &:focus{
         background-color: #e6e3e3;
       }
+      &[inRange="true"] {
+        background-color: #6dbdff;
+        color: #ffffff;
+        border-radius: 0px;
+      }
       &[selectedDate="true"] {
         background-color: #027fe6;
         color: #ffffff;
@@ -246,7 +251,7 @@ input.sam-date-input {
   }
 }
 
-.sam-calendar[open="true"] {
+.sam-datepicker[open="true"] {
   visibility: visible;
   display: block;
   max-height: 364px;

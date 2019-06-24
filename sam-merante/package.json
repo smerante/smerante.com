@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "rm ../*.* && rm -r ../assets && ng build --prod --base-href / && cp -a dist/sam-merante/* ..",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist/sam-merante"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
     "firebase": "^5.9.1",
+    "gh-pages": "^2.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "web-animations-js": "^2.3.1",

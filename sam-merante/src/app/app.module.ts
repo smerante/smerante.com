@@ -29,6 +29,8 @@ import { ModalModule } from './components/modal/modal.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { DatePickerComponent } from './components/datepicker/datepicker.component';
 import { DatePickerRangeComponent } from './components/datepicker/datepicker-range.component';
+import { GameComponent } from './game/game.component';
+import { ScreenComponent } from './game/screen/screen.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { DatePickerRangeComponent } from './components/datepicker/datepicker-ran
     RadioGroupComponent,
     TooltipComponent,
     DatePickerComponent,
-    DatePickerRangeComponent
+    DatePickerRangeComponent,
+    GameComponent,
+    ScreenComponent
   ],
   imports: [
     BrowserModule,

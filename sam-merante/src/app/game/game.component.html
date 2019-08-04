@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1 class="display-4">Tic Tac Toe</h1>
+  <p class="lead">Simple online tic tac toe game</p>
+</div>
+
+<div *ngIf="!joinedGame" class="container-fluid">
+  <div class="row text-center">
+    <div class="col-sm-3" style="margin: 0 auto;">
+      <sam-input-wrapper field_id="userName" label="User name">
+        <input [(ngModel)]="userName" sam-input id="userName" aria-label="Please enter your user name to play" />
+      </sam-input-wrapper>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <button sam-cta (click)="joinGame();">Join game</button>
+    </div>
+  </div>
+</div>
+
+
+<game-screen *ngIf="joinedGame" [playersName]="userName" [hostSession]="hostSession" (leave)="leftGame();"></game-screen>

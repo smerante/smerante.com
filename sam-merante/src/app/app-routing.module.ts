@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticatedComponents } from './forum/authenticated/authenticated.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ForumComponent } from './forum/forum.component';
+import { GameComponent } from './game/game.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'home', component: HomeComponent},
   { path: 'cv', component: CVComponent},
+  { path: 'game', component: GameComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '*', redirectTo: '/home' },
   {path: '404', redirectTo: '/home' },

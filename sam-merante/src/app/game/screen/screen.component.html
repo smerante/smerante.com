@@ -1,5 +1,6 @@
+<span  class="playersTurn">{{name}} vs {{opponentsName}}</span> 
 <div class="playersTurn">
-  {{playersTurn ? 'Player O\'s turn' : 'Player X\'s Turn'}}
+  {{playerXTurn ? xName + '\'s move' : oName + '\'s move'}}
   <br/>
   {{playerWon ? '' +playersWinMessage : ''}}
 </div>
@@ -9,7 +10,7 @@
     [id]="'square-' + i" 
     class="board--button"
     (click)="pressButton(i)"
-    [disabled]="playerWon || b == 0 ? true : b == 1 ? true : false">
+    [disabled]="!yourTurn || playerWon || b == 0 ? true : b == 1 ? true : false">
     <span class="board--button__label" [attr.player2]="b == 0 ? true : false">
       {{(b == 0 ? 'O' : b == 1 ? 'X' : '')}}
     </span>

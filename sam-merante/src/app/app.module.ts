@@ -10,7 +10,7 @@ import { CVComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CodeComponent } from './code/code.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticatedComponents } from './forum/authenticated/authenticated.component';
@@ -71,7 +71,7 @@ import { ScreenComponent } from './game/screen/screen.component';
     ModalModule,
     CardsModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

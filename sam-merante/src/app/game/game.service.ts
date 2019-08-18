@@ -1,28 +1,19 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { AuthService } from '../auth.service';
-import { Observable, observable, Subscription, Subject } from 'rxjs';
-import { Observer } from 'firebase';
-import { timeout } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { GameSession } from './GameSession.interface';
 
-// export interface Message {
-//   message: string,
-//   date: Date,
-//   email?: string,
-//   key? : string
-// }
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  private testSubject: Subject<boolean> = new Subject();
   constructor(private httpClient: HttpClient) { }
-  // this.authSerivce.token
 
-  public joinGame() {
+  public getGames() {
     return this.httpClient.get<{ name: string, id: Date, sessionId: number, joinName?: string }[]>('https://sam-merante.firebaseio.com/game.json',
       {
         observe: 'body',
@@ -34,7 +25,8 @@ export class GameService {
   public hostGame(userName: string) {
     let newSession = {
       hostName: userName,
-      id: new Date()
+      id: new Date(),
+      playersTurn: 'x'
     }
     return this.httpClient.post('https://sam-merante.firebaseio.com/game.json',
       newSession,
@@ -53,6 +45,31 @@ export class GameService {
       });
   }
 
+
+  public updatePlayersTurn(sessionId: string, value?: string) {
+    return this.httpClient.patch('https://sam-merante.firebaseio.com/game/' + sessionId + '.json',
+      { playersTurn: value },
+      {
+        observe: 'body',
+        responseType: 'json'
+      });
+  }
+
+  public updateBoard(sessionId: string, value?: Array<number> ) {
+    return this.httpClient.patch('https://sam-merante.firebaseio.com/game/' + sessionId + '.json',
+      { board: value },
+      {
+        observe: 'body',
+        responseType: 'json'
+      });
+  }
+
+  public getGameSession(sessionId: string): Observable<GameSession> {
+    return this.httpClient.get<GameSession>('https://sam-merante.firebaseio.com/game/' + sessionId + '.json')
+      .pipe(
+        map(res => new GameSession().deserialize(res))
+      );
+  }
 
   public updateHostSession(sessionId: string) {
     return this.httpClient.patch('https://sam-merante.firebaseio.com/game/' + sessionId + '.json',

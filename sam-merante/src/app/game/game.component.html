@@ -19,4 +19,4 @@
 </div>
 
 
-<game-screen *ngIf="joinedGame" [playersName]="userName" [hostSession]="hostSession" (leave)="leftGame();"></game-screen>
+<game-screen *ngIf="joinedGame" [hosting]="hosting" [playersName]="userName" [player]="player" [hostSession]="hostSession" (leave)="leftGame();"></game-screen>

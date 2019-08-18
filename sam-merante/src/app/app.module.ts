@@ -10,7 +10,7 @@ import { CVComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CodeComponent } from './code/code.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticatedComponents } from './forum/authenticated/authenticated.component';
@@ -29,6 +29,8 @@ import { ModalModule } from './components/modal/modal.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { DatePickerComponent } from './components/datepicker/datepicker.component';
 import { DatePickerRangeComponent } from './components/datepicker/datepicker-range.component';
+import { GameComponent } from './game/game.component';
+import { ScreenComponent } from './game/screen/screen.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { DatePickerRangeComponent } from './components/datepicker/datepicker-ran
     RadioGroupComponent,
     TooltipComponent,
     DatePickerComponent,
-    DatePickerRangeComponent
+    DatePickerRangeComponent,
+    GameComponent,
+    ScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,7 @@ import { DatePickerRangeComponent } from './components/datepicker/datepicker-ran
     ModalModule,
     CardsModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,74 @@
+@import "../../components/components.component.scss";
+
+.board {
+  width: 195px;
+  height: 200px;
+  margin: 0 auto;
+  border: 1px solid #888888;
+  &--button {
+    position: relative;
+    padding: 3px;
+    margin: 0px;
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    border: 1px solid #888888;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      box-shadow: 4px 4px 15px 0px #00000079;
+      &:before {
+        left: 0;
+        width: 100%;
+        border-radius: 0.25rem;
+      }
+      &:after {
+        top: 0px;
+        height: 100%;
+        border-radius: 0.25rem;
+      }
+    }
+    &:hover {
+      outline: none;
+      box-shadow: 4px 4px 15px 0px #00000079;
+      &:before {
+        left: 0;
+        width: 100%;
+        border-radius: 0.25rem;
+      }
+      &:after {
+        top: 0px;
+        height: 100%;
+        border-radius: 0.25rem;
+      }
+    }
+    &:active {
+      background: #027fe6;
+      color: white;
+    }
+    &:disabled {
+      background: #f1f1f1;
+      cursor: not-allowed;
+      border: black;
+    }
+    &__label {
+      color: #495057;
+      font-weight: 300;
+      line-height: 4rem;
+      font-size: 4rem;
+      position: absolute;
+      top: 0px;
+      left: 12px;
+      &[player2="true"] {
+        left: 9px;
+      }
+    }
+  }
+}
+.playersTurn {
+  @include base-font();
+  display: block;
+  margin: 8px auto;
+  width: 194px;
+  text-align: center;
+}

@@ -4,7 +4,7 @@
   width: 195px;
   height: 200px;
   margin: 0 auto;
-  border: 1px solid #888888;
+  border: 1px solid $border-color;
   &--button {
     position: relative;
     padding: 3px;
@@ -12,11 +12,11 @@
     width: 64px;
     height: 64px;
     background: transparent;
-    border: 1px solid #888888;
+    border: 1px solid $border-color;
     cursor: pointer;
     &:focus {
       outline: none;
-      box-shadow: 4px 4px 15px 0px #00000079;
+      box-shadow: 4px 4px 15px 0px $shadow-color;
       &:before {
         left: 0;
         width: 100%;
@@ -30,7 +30,7 @@
     }
     &:hover {
       outline: none;
-      box-shadow: 4px 4px 15px 0px #00000079;
+      box-shadow: 4px 4px 15px 0px $shadow-color;
       &:before {
         left: 0;
         width: 100%;
@@ -52,7 +52,7 @@
       border: black;
     }
     &__label {
-      color: #495057;
+      color: $text-color;
       font-weight: 300;
       line-height: 4rem;
       font-size: 4rem;

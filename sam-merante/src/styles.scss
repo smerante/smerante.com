@@ -2,3 +2,14 @@ label > * {
   display: block;
   pointer-events: none;
 }
+
+.body {
+  min-height: 100vh;
+}
+
+@import './app/styles/variables.scss';
+@import './app/styles/mixins.scss';
+
+a:focus {
+  outline: 1px solid $main-color;
+}

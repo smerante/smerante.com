@@ -1,7 +1,9 @@
+@import '../components/components.component.scss';
+
 .card{
   width: 95%;
   margin: 0px auto;
-  // border-bottom: 1px solid rgba(0,0,0,.125) !important;
+  // border-bottom: 1px solid $border-color !important;
 }
 .bold{
   font-weight: 700;
@@ -26,7 +28,7 @@
     max-height: 500px;
     overflow-y: scroll;
     visibility: visible;
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-top: 1px solid $border-color;
   }
 }
 .chevron{
@@ -37,8 +39,8 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  border-top: 3px solid rgba(0, 0, 0, 0.75);
-  border-right: 3px solid rgba(0, 0, 0, 0.75);
+  border-top: 3px solid $border-color;
+  border-right: 3px solid $border-color;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   position: relative;

@@ -1,35 +1,5 @@
-@mixin base-font{
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-}
-@mixin pseudo-border{
-  &:before{    
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 100%;
-    bottom: 0px;
-    left: 50%;
-    border-bottom: 2px solid #027fe6;
-    border-top: 2px solid #027fe6;
-    border-radius: 0;
-    transition: all ease-in-out 0.5s;
-  }
-  &:after{    
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0;
-    top: 50%;
-    left: 0px;
-    border-left: 2px solid #027fe6;
-    border-right: 2px solid #027fe6;
-    border-radius: 0;
-    transition: all ease-in-out 0.5s;
-  }
-}
+@import '../components/components.component.scss';
+
 .container{
   padding-top: 16px;
 }
@@ -57,14 +27,14 @@
   @include base-font;
   background-color: #fff;
   border: 0;
-  border-bottom: 2px solid #027fe65d;
+  border-bottom: 2px solid $border-color;
   transition: all ease-in-out 0.5s;
   &:focus{
     -webkit-appearance: none;
     outline: none;
   }
   &[invalid="true"]{
-    border: 2px solid red;
+    border: 2px solid $red;
   }
 }
 
@@ -74,14 +44,14 @@
   transform: scale(0.75);
   color: #027fe6;
   &[invalid="true"]{
-   color: red;
+   color: $red;
   }
 }
 .floating-label[hasVal="true"]{
   top: -28px;
   left: -15px;
   transform: scale(0.75);
-  color: #495057;
+  color: $text-color;
 }
 
 
@@ -117,10 +87,10 @@
   display: none;
   &[invalid="true"]{
     display: block;
-    border: 1px solid red;
+    border: 1px solid $red;
     padding: 8px 16px;
     @include base-font;
-    color: red;
+    color: $red;
   }
 }
 
@@ -163,7 +133,7 @@
     position: relative;
     &:before{
       content: 'Loading...';
-      color: white;
+      color: $white;
       text-align: center;
       position: absolute;
       padding-top: 43px;
@@ -171,7 +141,7 @@
       height: 100%;
       top: 0px;
       left: 0px;
-      background: #00000069;
+      background: $black;
       z-index: 9999;
       cursor: not-allowed;
     }
@@ -182,7 +152,7 @@
       height: 90px;
       top: 8px;
       left: calc(50% - 45px);
-      border: 4px solid #027fe6;
+      border: 4px solid $main-color;
       border-right: 0;
       border-bottom: 0;
       border-radius: 50%;

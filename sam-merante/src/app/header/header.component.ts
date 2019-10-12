@@ -31,7 +31,10 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('document:scroll')
   onScroll() {
-    this.scrollDown = !this.toggle && this.currentScrollOffset < window.pageYOffset ? true : false;
-    this.currentScrollOffset = window.pageYOffset;
+    const limit = document.body.offsetHeight - window.innerHeight;
+    if (window.pageYOffset > 0 && Math.abs(window.pageYOffset) < Math.abs(limit)) {
+      this.scrollDown = !this.toggle && this.currentScrollOffset < window.pageYOffset ? true : false;
+      this.currentScrollOffset = window.pageYOffset;
+    }
   };
 }

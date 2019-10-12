@@ -3204,7 +3204,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\n  <img src=\"assets/profile.png\" class=\"card-img-top\" alt=\"Profile picture of sam\">\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Sam Merante</h5>\n    <h6 class=\"card-subtitle mb-2 text-muted\">Software Developer</h6>\n    <p class=\"card-text\">\n      I am a York University graduate with a bachelor degree in Computer Science from the Lassonde School of Engineering. I have several years of programming\n      experience in languages such as Java, AngularJS/4-6, C++, Python, C#, C, among other languages.\n    </p>\n    <p class=\"card-text\">\n      I have experience both in front end and back end at the enterprise level for major North American\n      banks.\n    </p>\n  </div>\n</div>"
+module.exports = "<div class=\"card\">\n  <img src=\"assets/profile.png\" class=\"card-img-top\" alt=\"Profile picture of sam\">\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Sam Merante</h5>\n    <h6 class=\"card-subtitle mb-2 text-muted\">Software Developer</h6>\n    <p class=\"card-text\">\n      I am a York University graduate with a bachelor degree in Computer Science from the Lassonde School of Engineering. I have several years of programming\n      experience in languages such as Java, AngularJS/2+, C++, Python, C#, C, among other languages.\n    </p>\n    <p class=\"card-text\">\n      I have experience both in front end and back end at the enterprise level for major North American\n      banks.\n    </p>\n  </div>\n</div>"
 
 /***/ }),
 

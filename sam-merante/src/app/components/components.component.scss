@@ -1,8 +1,8 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
-@mixin pseudo-border{
-  &:before{    
-    content: '';
+@mixin pseudo-border {
+  &:before {
+    content: "";
     position: absolute;
     width: 0;
     height: 100%;
@@ -14,8 +14,8 @@
     -webkit-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
   }
-  &:after{    
-    content: '';
+  &:after {
+    content: "";
     position: absolute;
     width: 100%;
     height: 0;
@@ -29,19 +29,19 @@
   }
 }
 
-.col-sm-6{
+.col-sm-6 {
   padding: 8px;
 }
-.card-link{
-  @media screen and ( max-width: 575px){
+.card-link {
+  @media screen and (max-width: 575px) {
     display: block;
     width: 100%;
     text-align: center;
     margin: 0;
   }
 }
-.date{
-  @media screen and ( max-width: 575px){
+.date {
+  @media screen and (max-width: 575px) {
     display: block;
     width: 100%;
     text-align: center;

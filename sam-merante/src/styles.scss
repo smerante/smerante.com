@@ -7,9 +7,16 @@ label > * {
   min-height: 100vh;
 }
 
-@import './app/styles/variables.scss';
-@import './app/styles/mixins.scss';
+@import "./app/styles/variables.scss";
+@import "./app/styles/mixins.scss";
 
 a:focus {
   outline: 1px solid $main-color;
+}
+
+.sam-title {
+  @include base-font();
+  color: $text-color;
+  font-size: 2rem;
+  text-align: center;
 }

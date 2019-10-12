@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,34 +9,29 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   toggle: boolean;
-  @ViewChild('navMenu') navMenu: ElementRef;
+  breakpointSize = 768;
+  scrollDown = false;
+  currentScrollOffset = 0;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.toggle = false;
-    this.navMenu.nativeElement.className = 'navbar-collapse collapse';
   }
 
   openNav() {
-    this.toggle = !this.toggle;
-    if (window.innerWidth < 992) {
-      if (this.toggle) {
-        this.navMenu.nativeElement.className = 'navbar-collapse collapsing';
-        setTimeout(() => {
-          this.navMenu.nativeElement.className = 'navbar-collapse collapsing expanding';
-        }, 0);
-        setTimeout(() => {
-          this.navMenu.nativeElement.className = 'navbar-collapse collapse show';
-        }, 300);
-      } else {
-        this.navMenu.nativeElement.className = 'navbar-collapse collapsing expanding';
-        setTimeout(() => {
-          this.navMenu.nativeElement.className = 'navbar-collapse collapsing closing';
-        }, 0);
-        setTimeout(() => {
-          this.navMenu.nativeElement.className = 'navbar-collapse collapse';
-        }, 300);
-      }
+    if (window.innerWidth < this.breakpointSize) {
+      this.toggle = !this.toggle;
     }
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        window.scrollTo(0, 0)
+      }
+    });
   }
 
+  @HostListener('document:scroll')
+  onScroll() {
+    this.scrollDown = !this.toggle && this.currentScrollOffset < window.pageYOffset ? true : false;
+    this.currentScrollOffset = window.pageYOffset;
+  };
 }

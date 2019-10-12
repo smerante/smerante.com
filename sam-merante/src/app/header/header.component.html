@@ -1,35 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a routerLink="/home" class="navbar-brand">
-      <img class="profile" src="assets/profile.png">
-      Sam Merante
+<nav class="sam-navbar" [ngClass]="{'scrolled': scrollDown}">
+  <div class="sam-navbar__brand">
+    <a routerLink="/home" class="sam-navbar__brand--link">
+      <img class="sam-navbar__brand--img" src="assets/profile.png">
+      <span class="sam-navbar__brand--link-label">Sam Merante</span>
     </a>
-    <button class="navbar-toggler" [attr.toggle]="toggle" (click)="openNav();" type="button" data-toggle="collapse"
-      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="nav-menu-chevron"></span>
-    </button>
-    <div #navMenu id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a routerLink="/home" (click)="openNav();" routerLinkActive="active" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/cv" (click)="openNav();" routerLinkActive="active" class="nav-link">CV</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/projects" (click)="openNav();" routerLinkActive="active" class="nav-link">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/code" (click)="openNav();" routerLinkActive="active" class="nav-link">Code</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/components" (click)="openNav();" routerLinkActive="active" class="nav-link">Components</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/game" (click)="openNav();" routerLinkActive="active" class="nav-link">Game</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/forum" (click)="openNav();" routerLinkActive="active" class="nav-link">Forum</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  </div>
+  <button class="sam-navbar__toggle-menu" [attr.toggle]="toggle" (click)="openNav();" type="button"
+    data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="sam-navbar__toggle-menu--chevron"></span>
+  </button>
+  <div class="sam-navbar__menu" [ngClass]="{'expanded': toggle}">
+    <ul class="sam-navbar__menu--items">
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/home" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">Home</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/cv" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">CV</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/projects" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">Projects</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/code" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">Code</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/components" (click)="openNav();" routerLinkActive="active"
+          class="sam-navbar--link">Components</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/game" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">Game</a>
+      </li>
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/forum" (click)="openNav();" routerLinkActive="active" class="sam-navbar--link">Forum</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{scrollDown}}

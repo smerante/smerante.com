@@ -11,10 +11,12 @@ import { AuthenticatedComponents } from './forum/authenticated/authenticated.com
 import { AuthGuardService } from './auth-guard.service';
 import { ForumComponent } from './forum/forum.component';
 import { GameComponent } from './game/game.component';
+import { LottoComponent } from './lotto/lotto.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'lotto', component: LottoComponent},
   { path: 'components', component: ComponentsComponent},
   { path: 'forum', component: ForumComponent, children:[
     { path: 'authenticated', component: AuthenticatedComponents, canActivate: [AuthGuardService]}

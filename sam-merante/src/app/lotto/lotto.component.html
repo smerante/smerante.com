@@ -1,0 +1,5 @@
+<button sam-cta type="button" class="btn btn-info" (click)="upload()">Upload</button>
+
+<sam-input-wrapper field_id="xlsxFile" label="">
+  <input sam-input type="file" id="xlsxFile" aria-label="Upload file" (change)="incomingfile($event)" accept=".xlsx"/>
+</sam-input-wrapper>

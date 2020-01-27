@@ -31,6 +31,7 @@ import { DatePickerComponent } from './components/datepicker/datepicker.componen
 import { DatePickerRangeComponent } from './components/datepicker/datepicker-range.component';
 import { GameComponent } from './game/game.component';
 import { ScreenComponent } from './game/screen/screen.component';
+import { LottoComponent } from './lotto/lotto.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ScreenComponent } from './game/screen/screen.component';
     DatePickerComponent,
     DatePickerRangeComponent,
     GameComponent,
-    ScreenComponent
+    ScreenComponent,
+    LottoComponent
   ],
   imports: [
     BrowserModule,

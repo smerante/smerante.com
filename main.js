@@ -47,6 +47,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
 /* harmony import */ var _forum_forum_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forum/forum.component */ "./src/app/forum/forum.component.ts");
 /* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./game/game.component */ "./src/app/game/game.component.ts");
+/* harmony import */ var _lotto_lotto_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lotto/lotto.component */ "./src/app/lotto/lotto.component.ts");
+
 
 
 
@@ -64,6 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"] },
+    { path: 'lotto', component: _lotto_lotto_component__WEBPACK_IMPORTED_MODULE_14__["LottoComponent"] },
     { path: 'components', component: _components_components_component__WEBPACK_IMPORTED_MODULE_7__["ComponentsComponent"] },
     { path: 'forum', component: _forum_forum_component__WEBPACK_IMPORTED_MODULE_12__["ForumComponent"], children: [
             { path: 'authenticated', component: _forum_authenticated_authenticated_component__WEBPACK_IMPORTED_MODULE_10__["AuthenticatedComponents"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"]] }
@@ -198,6 +201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_datepicker_datepicker_range_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/datepicker/datepicker-range.component */ "./src/app/components/datepicker/datepicker-range.component.ts");
 /* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./game/game.component */ "./src/app/game/game.component.ts");
 /* harmony import */ var _game_screen_screen_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./game/screen/screen.component */ "./src/app/game/screen/screen.component.ts");
+/* harmony import */ var _lotto_lotto_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./lotto/lotto.component */ "./src/app/lotto/lotto.component.ts");
+
 
 
 
@@ -261,7 +266,8 @@ var AppModule = /** @class */ (function () {
                 _components_datepicker_datepicker_component__WEBPACK_IMPORTED_MODULE_28__["DatePickerComponent"],
                 _components_datepicker_datepicker_range_component__WEBPACK_IMPORTED_MODULE_29__["DatePickerRangeComponent"],
                 _game_game_component__WEBPACK_IMPORTED_MODULE_30__["GameComponent"],
-                _game_screen_screen_component__WEBPACK_IMPORTED_MODULE_31__["ScreenComponent"]
+                _game_screen_screen_component__WEBPACK_IMPORTED_MODULE_31__["ScreenComponent"],
+                _lotto_lotto_component__WEBPACK_IMPORTED_MODULE_32__["LottoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -3360,6 +3366,216 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/lotto/lotto.component.html":
+/*!********************************************!*\
+  !*** ./src/app/lotto/lotto.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"lotto-wrapper\">\n  <sam-input-wrapper field_id=\"xlsxFile\" label=\"\">\n    <input sam-input type=\"file\" id=\"xlsxFile\" aria-label=\"Upload file\" (change)=\"incomingfile($event)\"\n      accept=\".xlsx\" />\n  </sam-input-wrapper>\n\n  <button sam-cta type=\"button\" class=\"btn btn-info\" (click)=\"upload()\">Predict numbers</button>\n\n  <div style=\"margin-top:16px;\">\n    output:\n    <div *ngFor=\"let message of messages\">\n      {{message}}\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/lotto/lotto.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/lotto/lotto.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".lotto-wrapper {\n  display: flex;\n  margin: 0 auto;\n  width: 80%;\n  justify-content: center;\n  flex-wrap: wrap; }\n  .lotto-wrapper * {\n    display: block;\n    width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9TTUVSL2NvZGUvc21lcmFudGUuZ2l0aHViLmlvL3NhbS1tZXJhbnRlL3NyYy9hcHAvbG90dG8vbG90dG8uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFhO0VBQ2IsZUFBYztFQUNkLFdBQVU7RUFDVix3QkFBdUI7RUFDdkIsZ0JBQWUsRUFLaEI7RUFWRDtJQU9JLGVBQWM7SUFDZCxZQUFXLEVBQ1oiLCJmaWxlIjoic3JjL2FwcC9sb3R0by9sb3R0by5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb3R0by13cmFwcGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHdpZHRoOiA4MCU7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gICoge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/lotto/lotto.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/lotto/lotto.component.ts ***!
+  \******************************************/
+/*! exports provided: LottoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LottoComponent", function() { return LottoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var LottoComponent = /** @class */ (function () {
+    function LottoComponent() {
+        this.messages = [''];
+    }
+    LottoComponent.prototype.ngOnInit = function () {
+    };
+    LottoComponent.prototype.incomingfile = function (event) {
+        this.file = event.target.files[0];
+    };
+    LottoComponent.prototype.upload = function () {
+        var _this = this;
+        var fileReader = new FileReader();
+        fileReader.onload = function (e) {
+            _this.arrayBuffer = fileReader.result;
+            var data = new Uint8Array(_this.arrayBuffer);
+            var arr = new Array();
+            for (var i = 0; i != data.length; ++i)
+                arr[i] = String.fromCharCode(data[i]);
+            var bstr = arr.join("");
+            var workbook = xlsx__WEBPACK_IMPORTED_MODULE_2__["read"](bstr, { type: "binary" });
+            var first_sheet_name = workbook.SheetNames[0];
+            var worksheet = workbook.Sheets[first_sheet_name];
+            var winningNumbers = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].sheet_to_json(worksheet, { raw: true });
+            _this.predictNumbers(winningNumbers);
+        };
+        try {
+            fileReader.readAsArrayBuffer(this.file);
+        }
+        catch (exception) {
+            this.messages.push('something went wrong: ', exception);
+        }
+    };
+    LottoComponent.prototype.predictNumbers = function (file) {
+        this.messages = [''];
+        var winningRows = [];
+        var winningNumbers = [];
+        try {
+            file.forEach(function (row) {
+                winningRows.push(row.winningNumbers);
+            });
+            winningRows.forEach(function (row) {
+                winningNumbers.push({ winningNumbers: row.split(' ') });
+            });
+            for (var i = 0; i < winningNumbers.length; i++) {
+                for (var j = 0; j < 7; j++) {
+                    winningNumbers[i].winningNumbers[j] = parseInt(winningNumbers[i].winningNumbers[j], 10);
+                }
+            }
+            this.messages.push('predicting possible 5 sequences...');
+        }
+        catch (exception) {
+            this.messages.push('something went wrong: ', exception);
+        }
+        console.warn("predicting possible 5 sequences...");
+        this.predictNextUniqueNumbers(winningNumbers, 3, 49, 1);
+        this.predictNextUniqueNumbers(winningNumbers, 3, 49, 1);
+        this.predictOffPreviousWinningNum(winningNumbers, 2, 49, 1);
+        this.predictOffPreviousWinningNum(winningNumbers, 2, 49, 1);
+        this.predictOffPreviousWinningNum(winningNumbers, 3, 49, 1);
+    };
+    LottoComponent.prototype.predictNextUniqueNumbers = function (winningNumbers, similarities, high, low) {
+        var newSequence = [];
+        newSequence = this.generateNewSequence(high, low);
+        var previouslyDrawn = true;
+        while (previouslyDrawn) {
+            var maxSimilarNumbers = 0;
+            // WeekI
+            for (var weekI = 0; weekI < winningNumbers.length; weekI++) {
+                var similarNumbersForRow = 0;
+                // For each number drawn that week
+                for (var numI = 0; numI < winningNumbers[weekI]['winningNumbers'].length; numI++) {
+                    // Check every generated number
+                    for (var newGI = 0; newGI < 7; newGI++) {
+                        var currentNumber = newSequence[newGI];
+                        if (currentNumber == winningNumbers[weekI][numI]) {
+                            similarNumbersForRow++;
+                        }
+                    }
+                }
+                maxSimilarNumbers = similarNumbersForRow > maxSimilarNumbers ? similarNumbersForRow : maxSimilarNumbers;
+            }
+            if (maxSimilarNumbers <= similarities) {
+                previouslyDrawn = false;
+                newSequence = newSequence.sort();
+                console.warn('\t[', newSequence, '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+                this.messages.push('\t [' + newSequence + '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+            }
+            else {
+                newSequence = this.generateNewSequence(high, low);
+            }
+        }
+    };
+    LottoComponent.prototype.predictOffPreviousWinningNum = function (winningNumbers, simToPrevWeek, high, low) {
+        var newSequence = [];
+        newSequence = this.generateNewSequence(high, low);
+        var previouslyDrawn = true;
+        while (previouslyDrawn) {
+            var maxSimilarNumbers = 0;
+            var maxSimilarNumbersToPrevWeek = 0;
+            var lastDrawnWeek = 0;
+            var simToLastDrawn = 0;
+            // Check numbers for last drawn winning numbers
+            for (var numI = 0; numI < 7; numI++) {
+                // Check every generated number
+                for (var newGI = 0; newGI < 7; newGI++) {
+                    var currentNumber = newSequence[newGI];
+                    if (currentNumber == winningNumbers[lastDrawnWeek]['winningNumbers'][numI]) {
+                        simToLastDrawn++;
+                    }
+                }
+            }
+            maxSimilarNumbersToPrevWeek = simToLastDrawn > maxSimilarNumbersToPrevWeek ? simToLastDrawn
+                : maxSimilarNumbersToPrevWeek;
+            if (maxSimilarNumbersToPrevWeek == simToPrevWeek) {
+                // WeekI
+                for (var weekI = 0; weekI < winningNumbers.length; weekI++) {
+                    var similarNumbersForRow = 0;
+                    // For each number drawn that week
+                    for (var numI = 0; numI < winningNumbers[weekI]['winningNumbers'].length; numI++) {
+                        // Check every generated number
+                        for (var newGI = 0; newGI < 7; newGI++) {
+                            var currentNumber = newSequence[newGI];
+                            if (currentNumber == winningNumbers[weekI]['winningNumbers'][numI]) {
+                                similarNumbersForRow++;
+                            }
+                        }
+                    }
+                    maxSimilarNumbers = similarNumbersForRow > maxSimilarNumbers ? similarNumbersForRow
+                        : maxSimilarNumbers;
+                }
+                if (maxSimilarNumbers <= 3) {
+                    previouslyDrawn = false;
+                    newSequence = newSequence.sort();
+                    console.warn('\t [', newSequence, '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+                    this.messages.push('\t [' + newSequence + '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+                }
+                else
+                    newSequence = this.generateNewSequence(high, low);
+            }
+            else
+                newSequence = this.generateNewSequence(high, low);
+        }
+    };
+    LottoComponent.prototype.generateNewSequence = function (high, low) {
+        var newSequence = [];
+        var randomNumber = [];
+        for (var i = 0; i < 7; i++) {
+            var randomDigit = Math.round(Math.random() * high + low);
+            while (randomNumber.includes(randomDigit)) {
+                randomDigit = Math.round(Math.random() * high + low);
+            }
+            randomNumber.push(randomDigit);
+            newSequence[i] = randomDigit;
+        }
+        return newSequence;
+    };
+    LottoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-lotto',
+            template: __webpack_require__(/*! ./lotto.component.html */ "./src/app/lotto/lotto.component.html"),
+            styles: [__webpack_require__(/*! ./lotto.component.scss */ "./src/app/lotto/lotto.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LottoComponent);
+    return LottoComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/projects/projects.component.html":
 /*!**************************************************!*\
   !*** ./src/app/projects/projects.component.html ***!
@@ -3587,6 +3803,39 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 
 module.exports = __webpack_require__(/*! /Users/SMER/code/smerante.github.io/sam-merante/src/main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
+/*!************************!*\
+  !*** stream (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

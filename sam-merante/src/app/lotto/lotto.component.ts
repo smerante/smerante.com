@@ -11,6 +11,7 @@ interface WinningNumbers {
 })
 export class LottoComponent implements OnInit {
 
+  messages = [''];
   constructor() { }
 
   ngOnInit() {
@@ -39,24 +40,34 @@ export class LottoComponent implements OnInit {
       this.predictNumbers(winningNumbers);
 
     }
-    fileReader.readAsArrayBuffer(this.file);
+    try {
+      fileReader.readAsArrayBuffer(this.file);
+    } catch (exception) {
+      this.messages.push('something went wrong: ', exception);
+    }
   }
 
   predictNumbers(file: any[]) {
+    this.messages = [''];
     let winningRows = [];
-    file.forEach((row) => {
-      winningRows.push(row.winningNumbers);
-    });
     let winningNumbers: WinningNumbers[] = [];
+    try {
+      file.forEach((row) => {
+        winningRows.push(row.winningNumbers);
+      });
 
-    winningRows.forEach(row => {
-      winningNumbers.push({ winningNumbers: row.split(' ') });
-    });
+      winningRows.forEach(row => {
+        winningNumbers.push({ winningNumbers: row.split(' ') });
+      });
 
-    for (let i = 0; i < winningNumbers.length; i++) {
-      for (let j = 0; j < 7; j++) {
-        winningNumbers[i].winningNumbers[j] = parseInt(winningNumbers[i].winningNumbers[j], 10);
+      for (let i = 0; i < winningNumbers.length; i++) {
+        for (let j = 0; j < 7; j++) {
+          winningNumbers[i].winningNumbers[j] = parseInt(winningNumbers[i].winningNumbers[j], 10);
+        }
       }
+      this.messages.push('predicting possible 5 sequences...');
+    } catch (exception) {
+      this.messages.push('something went wrong: ', exception);
     }
     console.warn("predicting possible 5 sequences...");
     this.predictNextUniqueNumbers(winningNumbers, 3, 49, 1);
@@ -98,7 +109,8 @@ export class LottoComponent implements OnInit {
       if (maxSimilarNumbers <= similarities) {
         previouslyDrawn = false;
         newSequence = newSequence.sort()
-        console.warn('\t', newSequence, ' + [' + Math.round(Math.random() * 49 + 1) + ']');
+        console.warn('\t[', newSequence, '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+        this.messages.push('\t [' + newSequence + '] + [' + Math.round(Math.random() * 49 + 1) + ']');
       } else {
         newSequence = this.generateNewSequence(high, low);
       }
@@ -155,7 +167,8 @@ export class LottoComponent implements OnInit {
         if (maxSimilarNumbers <= 3) {
           previouslyDrawn = false;
           newSequence = newSequence.sort()
-          console.warn('\t', newSequence, ' + [' + Math.round(Math.random() * 49 + 1) + ']');
+          console.warn('\t [', newSequence, '] + [' + Math.round(Math.random() * 49 + 1) + ']');
+          this.messages.push('\t [' + newSequence + '] + [' + Math.round(Math.random() * 49 + 1) + ']');
         } else
           newSequence = this.generateNewSequence(high, low);
 

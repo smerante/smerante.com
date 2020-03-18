@@ -1,5 +1,15 @@
-<button sam-cta type="button" class="btn btn-info" (click)="upload()">Upload</button>
+<div class="lotto-wrapper">
+  <sam-input-wrapper field_id="xlsxFile" label="">
+    <input sam-input type="file" id="xlsxFile" aria-label="Upload file" (change)="incomingfile($event)"
+      accept=".xlsx" />
+  </sam-input-wrapper>
 
-<sam-input-wrapper field_id="xlsxFile" label="">
-  <input sam-input type="file" id="xlsxFile" aria-label="Upload file" (change)="incomingfile($event)" accept=".xlsx"/>
-</sam-input-wrapper>
+  <button sam-cta type="button" class="btn btn-info" (click)="upload()">Predict numbers</button>
+
+  <div style="margin-top:16px;">
+    output:
+    <div *ngFor="let message of messages">
+      {{message}}
+    </div>
+  </div>
+</div>

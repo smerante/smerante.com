@@ -1,0 +1,37 @@
+<h1 class="sam-title">COVID Stock checker</h1>
+<div class="button-container">
+  <button sam-cta (click)="getUSStocks();">Get US stocks</button>
+  <button sam-cta (click)="getCAStocks();">Get CA stocks</button>
+</div>
+
+<div role="table" class="stocks">
+  <div role="row" class="stocks-row">
+    <span role="columnheader" class="stocks-col">Symbol</span>
+    <span role="columnheader" class="stocks-col">Pre Panic</span>
+    <span role="columnheader" class="stocks-col">Post Panic</span>
+    <span role="columnheader" class="stocks-col">Percentage</span>
+  </div>
+  <div row="row" class="stocks-row" *ngFor="let stock of stocksUS">
+    <span role="complementary" class="stocks-col symbol">{{ stock.symbol }}</span>
+    <span role="complementary" class="stocks-col">{{ stock.prePrice | currency }}</span>
+    <span role="complementary" class="stocks-col">{{ stock.postPrice | currency}}</span>
+    <span role="complementary" class="stocks-col"
+      [ngClass]="{'down': stock.postPercent < 0, 'up': stock.postPercent > 0}">{{ stock.postPercent | percent }}</span>
+  </div>
+</div>
+
+<div role="table" class="stocks">
+  <div role="row" class="stocks-row">
+    <span role="columnheader" class="stocks-col">Symbol</span>
+    <span role="columnheader" class="stocks-col">Pre Panic</span>
+    <span role="columnheader" class="stocks-col">Post Panic</span>
+    <span role="columnheader" class="stocks-col">Percentage</span>
+  </div>
+  <div row="row" class="stocks-row" *ngFor="let stock of stocksCA">
+    <span role="complementary" class="stocks-col symbol">{{ stock.symbol }}</span>
+    <span role="complementary" class="stocks-col">{{ stock.prePrice | currency }}</span>
+    <span role="complementary" class="stocks-col">{{ stock.postPrice | currency}}</span>
+    <span role="complementary" class="stocks-col"
+      [ngClass]="{'down': stock.postPercent < 0, 'up': stock.postPercent > 0}">{{ stock.postPercent | percent }}</span>
+  </div>
+</div>

@@ -11,15 +11,15 @@ import { startWith, switchMap } from 'rxjs/operators';
 })
 export class ScreenComponent implements OnInit {
 
-  private board: Array<number> = [];
+  board: Array<number> = [];
 
-  private playerXTurn: boolean; //0 = o; 1 = x;
-  private playerWon: boolean;
-  private yourTurn: boolean = false;
-  private playersWinMessage: any;
-  private opponentsName: string;
+  playerXTurn: boolean; //0 = o; 1 = x;
+  playerWon: boolean;
+  yourTurn: boolean = false;
+  playersWinMessage: any;
+  opponentsName: string;
 
-  private gameSessionSub: Subscription;
+  gameSessionSub: Subscription;
 
   @Input('hostSession') sessionId: string;
   @Input('playersName') name: string;
@@ -27,8 +27,8 @@ export class ScreenComponent implements OnInit {
   @Input('hosting') hosting: boolean;
 
 
-  private xName: string = 'Unknown';
-  private oName: string = 'Unknown';
+  xName: string = 'Unknown';
+  oName: string = 'Unknown';
   @Output() leave: EventEmitter<void> = new EventEmitter();
 
   constructor(private gameService: GameService) { };
@@ -67,7 +67,7 @@ export class ScreenComponent implements OnInit {
           this.playerWon = this.checkWinState() == false ? false : true;
           if (this.playerWon) {
             this.playersWinMessage = this.checkWinState();
-            setTimeout(()=>{
+            setTimeout(() => {
               this.leaveGame();
             }, 5000);
           }

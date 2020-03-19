@@ -14,7 +14,7 @@ export class TooltipComponent implements OnInit {
   @Input('tooltipId') tooltipId: string = 'sam-tooltip-' + (++uniqueId);
   @Input('tooltipLabel') tooltipLabel: string = 'Label ' + uniqueId;
   @Input('tooltipAriaLabel') tooltipAriaLabel: string = this.tooltipLabel + '. Open tooltip';
-  @ViewChild('tooltipContainer') tooltipContainer: ElementRef;
+  @ViewChild('tooltipContainer', { static: true }) tooltipContainer: ElementRef;
 
   contentOpen: boolean = false;
 

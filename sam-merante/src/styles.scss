@@ -9,9 +9,30 @@ label > * {
 
 @import "./app/styles/variables.scss";
 @import "./app/styles/mixins.scss";
+a {
+  position: relative;
+} 
+a:after {
+  transition: width 0.5s ease;
+  -webkit-transition: width 0.5s ease;
+  -moz-transition: width 0.5s ease;
+  -o-transition: width 0.5s ease;
 
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0px;
+  height: 2px;
+  top: calc(100% + 2px);
+  left: 0px;
+  background-color: $main-color-dark;
+}
 a:focus {
-  outline: 1px solid $main-color;
+  position: relative;
+  outline: none;
+  &:after {
+    width: 100%;
+  }
 }
 
 .sam-title {

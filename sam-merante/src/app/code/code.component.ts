@@ -7,27 +7,27 @@ import { Component, OnInit, HostListener, ElementRef, ViewChild, Renderer2 } fro
 })
 export class CodeComponent implements OnInit {
 
-  @ViewChild('card1') card1: ElementRef;
-  @ViewChild('card2') card2: ElementRef;
-  @ViewChild('card3') card3: ElementRef;
-  @ViewChild('card4') card4: ElementRef;
-  @ViewChild('card5') card5: ElementRef;
-  @ViewChild('card6') card6: ElementRef;
-  @ViewChild('card7') card7: ElementRef;
-  @ViewChild('card8') card8: ElementRef;
-  @ViewChild('card9') card9: ElementRef;
-  @ViewChild('card10') card10: ElementRef;
-  @ViewChild('card11') card11: ElementRef;
-  @ViewChild('card12') card12: ElementRef;
-  @ViewChild('card13') card13: ElementRef;
-  @ViewChild('card14') card14: ElementRef;
-  @ViewChild('card15') card15: ElementRef;
-  @ViewChild('card16') card16: ElementRef;
-  @ViewChild('card17') card17: ElementRef;
-  @ViewChild('card18') card18: ElementRef;
-  @ViewChild('card19') card19: ElementRef;
-  @ViewChild('card20') card20: ElementRef;
-  @ViewChild('card21') card21: ElementRef;
+  @ViewChild('card1', { static: true }) card1: ElementRef;
+  @ViewChild('card2', { static: true }) card2: ElementRef;
+  @ViewChild('card3', { static: true }) card3: ElementRef;
+  @ViewChild('card4', { static: true }) card4: ElementRef;
+  @ViewChild('card5', { static: true }) card5: ElementRef;
+  @ViewChild('card6', { static: true }) card6: ElementRef;
+  @ViewChild('card7', { static: true }) card7: ElementRef;
+  @ViewChild('card8', { static: true }) card8: ElementRef;
+  @ViewChild('card9', { static: true }) card9: ElementRef;
+  @ViewChild('card10', { static: true }) card10: ElementRef;
+  @ViewChild('card11', { static: true }) card11: ElementRef;
+  @ViewChild('card12', { static: true }) card12: ElementRef;
+  @ViewChild('card13', { static: true }) card13: ElementRef;
+  @ViewChild('card14', { static: true }) card14: ElementRef;
+  @ViewChild('card15', { static: true }) card15: ElementRef;
+  @ViewChild('card16', { static: true }) card16: ElementRef;
+  @ViewChild('card17', { static: true }) card17: ElementRef;
+  @ViewChild('card18', { static: true }) card18: ElementRef;
+  @ViewChild('card19', { static: true }) card19: ElementRef;
+  @ViewChild('card20', { static: true }) card20: ElementRef;
+  @ViewChild('card21', { static: true }) card21: ElementRef;
 
   constructor(private renderer: Renderer2) { }
 

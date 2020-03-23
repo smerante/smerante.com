@@ -26,10 +26,10 @@ export class CtaComponent implements OnInit {
 
   @HostListener('mouseover')
   onHover(){
-    let ua = navigator.userAgent;
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
-      this.elRef.nativeElement.click();
-    }
+    // let ua = navigator.userAgent;
+    // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)){
+    //   this.elRef.nativeElement.click();
+    // }
   }
 
 }

@@ -38,14 +38,14 @@ export class StocksComponent implements OnInit {
   stocksCA: Stock[];
   symbolsCA = [
     'DOL.TO',
-    'RY',
+    'RY.TO',
     'TD.TO',
     'BMO.TO'
   ];
 
   preCovidPriceCA = [
     48,
-    80.58,
+    110,
     75,
     101
   ];

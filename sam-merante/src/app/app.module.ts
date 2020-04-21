@@ -24,7 +24,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RadiosComponent, RadioGroupComponent } from './components/radios/radios.component';
 import { CardsModule } from './components/cards/cards.module';
 
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalModule } from './components/modal/modal.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { DatePickerComponent } from './components/datepicker/datepicker.component';
@@ -65,15 +64,14 @@ import { StocksComponent } from './stocks/stocks.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     DocumentationModule,
     HttpClientModule,
     ModalModule,
-    CardsModule
+    CardsModule,
+    AppRoutingModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

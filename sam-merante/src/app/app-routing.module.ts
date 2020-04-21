@@ -14,22 +14,24 @@ import { GameComponent } from './game/game.component';
 import { StocksComponent } from './stocks/stocks.component';
 
 const routes: Routes = [
-  { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'components', component: ComponentsComponent},
-  { path: 'forum', component: ForumComponent, children:[
-    { path: 'authenticated', component: AuthenticatedComponents, canActivate: [AuthGuardService]}
-  ]},
-  { path: 'code', component: CodeComponent},
-  { path: 'projects', component: ProjectsComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'cv', component: CVComponent},
-  { path: 'game', component: GameComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'components', component: ComponentsComponent },
+  {
+    path: 'forum', component: ForumComponent, children: [
+      { path: 'authenticated', component: AuthenticatedComponents, canActivate: [AuthGuardService] }
+    ]
+  },
+  { path: 'code', component: CodeComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'cv', component: CVComponent },
+  { path: 'game', component: GameComponent },
   { path: 'stocks', component: StocksComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '*', redirectTo: '/home' },
-  {path: '404', redirectTo: '/home' },
-  {path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '/home' },
+  { path: '404', redirectTo: '/home' },
 ];
 
 @NgModule({

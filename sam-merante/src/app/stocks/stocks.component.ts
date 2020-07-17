@@ -40,14 +40,16 @@ export class StocksComponent implements OnInit {
     'DOL.TO',
     'RY.TO',
     'TD.TO',
-    'BMO.TO'
+    'BMO.TO',
+    'AC.TO',
   ];
 
   preCovidPriceCA = [
     48,
     110,
     75,
-    101
+    101,
+    52
   ];
 
   postCovidPercentage = [];

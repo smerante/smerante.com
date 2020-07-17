@@ -32,6 +32,7 @@ import { DatePickerRangeComponent } from './components/datepicker/datepicker-ran
 import { GameComponent } from './game/game.component';
 import { ScreenComponent } from './game/screen/screen.component';
 import { StocksComponent } from './stocks/stocks.component';
+import { SMComponentsModule } from '@smerante/components';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { StocksComponent } from './stocks/stocks.component';
     DatePickerRangeComponent,
     GameComponent,
     ScreenComponent,
-    StocksComponent
+    StocksComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,8 @@ import { StocksComponent } from './stocks/stocks.component';
     DocumentationModule,
     HttpClientModule,
     ModalModule,
-    CardsModule
+    CardsModule,
+    SMComponentsModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

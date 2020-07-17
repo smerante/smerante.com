@@ -4,7 +4,7 @@
   width: 100%;
   height: 72px;
 }
-@import "../components/components.component.scss";
+@import "../../styles.scss";
 
 .sam-navbar {
   @include base-font();

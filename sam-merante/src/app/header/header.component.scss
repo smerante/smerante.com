@@ -18,12 +18,23 @@
   z-index: 99999;
   background: white;
   box-shadow: 1px 1px 10px 1px #8888886e;
+  height: 72px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   &.scrolled {
     transform: translateY(-100%);
+  }
+
+  #home {
+    display: table;
+    height: 64px;
+    > .sam-navbar__menu--item {
+      width: 200px;
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   &__brand {
     display: inline-flex;

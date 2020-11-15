@@ -2,10 +2,90 @@
 <div class="accordion">
   <div class="card">
     <div class="card-header" [attr.expanded]="expanded[0]" (click)="expand(0);">
-      Android Applications <span class="chevron" [attr.expanded]="expanded[0]"></span>
+      Enterprise Applications <span class="chevron" [attr.expanded]="expanded[0]"></span>
+    </div>
+    <div [attr.expanded]="expanded[0]" class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-6 bold">
+              Major North American Bank ~ Design System
+            </div>
+            <div class="col-sm-6 text-right">
+              August 2018 - Present
+            </div>
+          </div>
+          <p class="card-text">
+            Worked on a reusable, scalable and accessible, component library including design and functional front end Components.
+          </p>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-6 bold">
+              Toronto Dominon Bank ~ Personal Lending Application
+            </div>
+            <div class="col-sm-6 text-right">
+              August 2017 – July 2018
+            </div>
+          </div>
+          <p class="card-text">
+            Worked on an online application allowing a customer to apply for an unsecured loan with auto approval and
+            auto
+            funding. Agile
+            development with Angular JS front end and Java back end. Technology stack: Angular, Java, Jboss, Node,
+            Maven,
+            Bower, SASS, Jenkins, Oracale, Splunk, Jira, confluence, BitBucket.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header" [attr.expanded]="expanded[1]" (click)="expand(1);">
+      Personal Applications <span class="chevron" [attr.expanded]="expanded[1]"></span>
+    </div>
+    <div [attr.expanded]="expanded[1]" class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-6 bold">
+              Video Game Programming - PC
+            </div>
+            <div class="col-sm-6 text-right">
+              August 2012 – Current
+            </div>
+          </div>
+          <p class="card-text">
+            Worked on and continue working on game applications for the PC as a personal hobby, including games written
+            in Java, C++, C#, and in the unity game engine.
+          </p>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-6 bold">
+              Website Design &amp; Development
+            </div>
+            <div class="col-sm-6 text-right">
+              August 2012 – Current
+            </div>
+          </div>
+          <p class="card-text">
+            I enjoy working on website design and development using Javascript and front end frameworks, and using Java
+            and related framekworks for the backend.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" [attr.expanded]="expanded[2]" (click)="expand(2);">
+      Android Applications <span class="chevron" [attr.expanded]="expanded[2]"></span>
     </div>
     <div class="collapse show">
-      <div [attr.expanded]="expanded[0]" class="card-body">
+      <div [attr.expanded]="expanded[2]" class="card-body">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <span class="bold"><img alt="PJ.png" style="width: 64px; margin-right: 8px" class="img-responsive" src="assets/PJ.png" />
@@ -54,84 +134,6 @@
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" [attr.expanded]="expanded[1]" (click)="expand(1);">
-      Enterprise Applications <span class="chevron" [attr.expanded]="expanded[1]"></span>
-    </div>
-    <div [attr.expanded]="expanded[1]" class="card-body">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-6 bold">
-              Major North American Bank - Personal Lending Application
-            </div>
-            <div class="col-sm-6 text-right">
-              August 2017 – July 2018
-            </div>
-          </div>
-          <p class="card-text">
-            Worked on an online application allowing a customer to apply for an unsecured loan with auto approval and
-            auto
-            funding. Agile
-            development with Angular JS front end and Java back end. Technology stack: Angular, Java, Jboss, Node,
-            Maven,
-            Bower, SASS, Jenkins, Oracale, Splunk, Jira, confluence, BitBucket.
-          </p>
-        </li>
-      </ul>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-6 bold">
-              Major North American Bank - Components Library
-            </div>
-          </div>
-          <p class="card-text">
-            Worked on a reusable, scalable and accessible, common component library including design and functional front end Components.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="card">
-    <div class="card-header" [attr.expanded]="expanded[2]" (click)="expand(2);">
-      Personal Applications <span class="chevron" [attr.expanded]="expanded[2]"></span>
-    </div>
-    <div [attr.expanded]="expanded[2]" class="card-body">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-6 bold">
-              Video Game Programming - PC
-            </div>
-            <div class="col-sm-6 text-right">
-              August 2012 – Current
-            </div>
-          </div>
-          <p class="card-text">
-            Worked on and continue working on game applications for the PC as a personal hobby, including games written
-            in Java, C++, C#, and in the unity game engine.
-          </p>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-6 bold">
-              Website Design &amp; Development
-            </div>
-            <div class="col-sm-6 text-right">
-              August 2012 – Current
-            </div>
-          </div>
-          <p class="card-text">
-            I enjoy working on website design and development using Javascript and front end frameworks, and using Java
-            and related framekworks for the backend.
-          </p>
-        </li>
-      </ul>
     </div>
   </div>
 </div>

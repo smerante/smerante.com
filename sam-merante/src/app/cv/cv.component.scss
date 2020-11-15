@@ -1,40 +1,43 @@
-.card{
+.card {
   width: 90%;
   margin: 16px auto;
 }
-.list-group-item{
+.list-group-item {
   background-color: transparent;
 }
-.small{
+.small {
   font-size: 1rem;
 }
-.list-title{
+.list-title {
   width: 80%;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: center;
   font-weight: 700;
 }
-.list-bold{
+.list-bold {
   font-weight: 700;
 }
-.nav-link{
+.nav-link {
   font-size: 1.25rem;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
-.card-header{
-  &:first-child{
+.card-header {
+  &:first-child {
     position: relative;
     padding-left: 0px;
     left: -1px;
   }
-  .card-header-tabs{
+  .card-header-tabs {
     margin-left: 0px;
   }
 }
-.nav-item{
-  @media screen and ( max-width: 768px){
+#cvHeader.card-header {
+  padding-top: 0px;
+}
+.nav-item {
+  @media screen and (max-width: 768px) {
     display: block;
     width: 100%;
   }

@@ -1,9 +1,12 @@
 <nav class="sam-navbar" [ngClass]="{'scrolled': scrollDown}">
   <div class="sam-navbar__brand">
-    <a routerLink="/home" class="sam-navbar__brand--link">
-      <img class="sam-navbar__brand--img" src="assets/profile.png">
-      <span class="sam-navbar__brand--link-label">Sam Merante</span>
-    </a>
+    <ul id="home" class="sam-navbar__menu--items">
+      <li class="sam-navbar__menu--item">
+        <a routerLink="/home" class="sam-navbar__brand--link">
+          <span class="sam-navbar__brand--link-label">Sam Merante</span>
+        </a>
+      </li>
+    </ul>
   </div>
   <button class="sam-navbar__toggle-menu" [attr.toggle]="toggle" (click)="openNav();" type="button"
     data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"

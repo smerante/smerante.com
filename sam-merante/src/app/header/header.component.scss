@@ -32,8 +32,8 @@
     height: 64px;
     > .sam-navbar__menu--item {
       width: 200px;
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
     }
   }
   &__brand {
@@ -176,8 +176,10 @@
       }
       &--item {
         display: block;
-        height: auto;
         width: 100%;
+      }
+      &--item.nav {
+        height: auto;
       }
       .sam-navbar--link {
         display: block;

@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openNav() {
-    if (window.innerWidth < this.breakpointSize) {
+    if (window.innerWidth <= this.breakpointSize) {
       this.toggle = !this.toggle;
     }
     this.router.events.subscribe((evt) => {

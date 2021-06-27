@@ -8,20 +8,24 @@ import {
 import './App.scss';
 import HomeComponent from './pages/home/Home';
 import NavComponent from './components/nav/Nav';
+import store from './app/store/userStore'
+import { Provider } from 'react-redux'
 
 function App() {
   return (
-    <Router>
-      <NavComponent />
-      <div className="body">
-        <Switch>
-          <Route exact path={["/", "/home"]}>
-            <HomeComponent></HomeComponent>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+    <Provider store={store}>
+      <Router>
+        <NavComponent />
+        <div className="body">
+          <Switch>
+            <Route exact path={["/", "/home"]}>
+              <HomeComponent></HomeComponent>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
+  )
 }
 
 export default App;

@@ -2,9 +2,16 @@ import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import "./Home.scss"
 import profileImage from '../../assets/profile.jpg';
+import { useSelector, useDispatch } from 'react-redux'
+import { addUser } from '../../app/store/reducers/userSlice';
+import { StoreState } from '../../app/store/userStore';
 const HomeComponent: FunctionComponent<{}> = (props) => {
+    const userSelector = useSelector((state: StoreState) => state.user.name);
+    const dispatch = useDispatch();
     return (
         <div className="card">
+            user: {userSelector}
+            <button onClick={() => dispatch(addUser({ name: 'Sam Merante' }))}>Add User</button>
             <img src={profileImage} className="card-img-top" alt="Profile of sam" />
             <div className="card-body">
                 <h5 className="card-title">Sam Merante</h5>

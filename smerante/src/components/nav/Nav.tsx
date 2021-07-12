@@ -2,9 +2,10 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Nav.scss";
 import classnames from 'classnames';
-
+import { matchPath } from 'react-router';
+import { useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 interface NavComponentProps {
-
 }
 
 const NavComponent: FunctionComponent<NavComponentProps> = (props) => {
@@ -30,11 +31,10 @@ const NavComponent: FunctionComponent<NavComponentProps> = (props) => {
         if (window.innerWidth <= breakpointSize) {
             setToggle(!toggle);
         }
-        // this.router.events.subscribe((evt) => {
-        //     if (evt instanceof NavigationEnd) {
-        //         window.scrollTo(0, 0)
-        //     }
-        // });
+    }
+    const location = useLocation();
+    const isActive = (path: string): boolean => {
+        return !!matchPath(location.pathname,`/${path}`)
     }
     return (
         // [ngClass] = "{'scrolled': scrollDown}" 
@@ -57,27 +57,26 @@ const NavComponent: FunctionComponent<NavComponentProps> = (props) => {
                 </button >
                 <div className={classnames("sam-navbar__menu", { 'expanded': toggle })} >
                     <ul className="sam-navbar__menu--items">
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/home" onClick={openNav} className="sam-navbar--link">Home</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/home" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Home')})}>Home</Link>
                         </li>
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/cv" onClick={openNav} className="sam-navbar--link">CV</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/cv" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('CV')})}>CV</Link>
                         </li >
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/projects" onClick={openNav} className="sam-navbar--link">Projects</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/projects" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Projects')})}>Projects</Link>
                         </li >
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/code" onClick={openNav} className="sam-navbar--link">Code</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/code" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Code')})}>Code</Link>
                         </li >
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/components" onClick={openNav}
-                                className="sam-navbar--link">Components</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/components" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Components')})}>Components</Link>
                         </li >
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/game" onClick={openNav} className="sam-navbar--link">Game</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/game" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Game')})}>Game</Link>
                         </li >
-                        <li className="sam-navbar__menu--item nav">
-                            <Link to="/forum" onClick={openNav} className="sam-navbar--link">Forum</Link>
+                        <li className={classNames("sam-navbar__menu--item nav")}>
+                            <Link to="/forum" onClick={openNav} className={classNames("sam-navbar--link", {'active': isActive('Forum')})}>Forum</Link>
                         </li >
                     </ul >
                 </div >

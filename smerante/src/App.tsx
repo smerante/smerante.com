@@ -1,4 +1,4 @@
-import React from 'react';
+import CVComponent from "./pages/cv/CV";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path={["/", "/home"]}>
             <HomeComponent></HomeComponent>
+          </Route>
+          <Route exact path={["/cv"]}>
+            <CVComponent></CVComponent>
           </Route>
         </Switch>
       </div>

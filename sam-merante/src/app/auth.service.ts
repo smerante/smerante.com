@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,17 @@ export class AuthService {
   isSignedIn: boolean;
   email: string;
   token: string;
+  auth = firebase.getAuth();
   constructor() { }
 
   signupUser(email: string, password: string, name?: string) {
     //this is a promise so you can listen with .then
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
+
+    return firebase.createUserWithEmailAndPassword(this.auth, email, password)
       .then(
         data => {
           console.log('create user: ', data);
-          return data.user.updateProfile({ displayName: name }).then(
+          return firebase.updateProfile(this.auth.currentUser, { displayName: name }).then(
             () => {
               this.verifyEmail();
             }
@@ -26,10 +29,10 @@ export class AuthService {
   }
 
   verifyEmail() {
-    return firebase.auth().currentUser.sendEmailVerification().then(
+    return firebase.sendEmailVerification(this.auth.currentUser).then(
       (verified) => {
-        this.email = firebase.auth().currentUser.email;
-        firebase.auth().currentUser.getIdToken()
+        this.email = this.auth.currentUser.email;
+        firebase.getIdToken(this.auth.currentUser)
           .then(
             (token: string) => {
               this.token = token;
@@ -41,23 +44,23 @@ export class AuthService {
   }
 
   isVerified(): boolean {
-    let verified = firebase.auth().currentUser ? firebase.auth().currentUser.emailVerified : false;
+    let verified = this.auth ? this.auth.currentUser.emailVerified : false;
     if(verified){
-      this.email = firebase.auth().currentUser.email;
-      firebase.auth().currentUser.getIdToken()
+      this.email = this.auth.currentUser.email;
+      firebase.getIdToken(this.auth.currentUser)
         .then(
           (token: string) => {
             this.token = token;
           }
         );
     }
-    console.log('logged in: ' , verified ? firebase.auth().currentUser : '');
+    console.log('logged in: ' , verified ? this.auth : '');
     return verified;
   }
 
 
   signInUser(email: string, password: string) {
-    return firebase.auth().signInWithEmailAndPassword(email, password)
+    return firebase.signInWithEmailAndPassword(this.auth, email, password)
       .then(
         () => {
           console.log('user email verified ', this.isVerified());
@@ -67,7 +70,7 @@ export class AuthService {
   }
 
   logout() {
-    firebase.auth().signOut();
+    firebase.signOut(this.auth);
   }
 
 }

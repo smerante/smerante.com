@@ -1,3 +1,6 @@
+@import "./app/styles/variables.scss";
+@import "./app/styles/mixins.scss";
+
 .sam-merante-body { 
   min-width: auto !important;
 }
@@ -10,8 +13,21 @@ label > * {
   min-height: 100vh;
 }
 
-@import "./app/styles/variables.scss";
-@import "./app/styles/mixins.scss";
+body,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-color;
+  font-weight: 500;
+}
+a[href][target="_blank"] {
+  color: #007bff;
+}
 a {
   position: relative;
 } 
